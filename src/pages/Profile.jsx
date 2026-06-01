@@ -1,6 +1,16 @@
 // Landing.jsx
+import { Link } from "react-router-dom";
+
 function Profile() {
-  return <h1>Profile Page</h1>;
+  return (
+    <div>
+      <h1>Profile Page</h1>;
+
+      <Link to="/settings">
+        <button>Go to settings </button>
+      </Link>
+    </div>
+  );  
 }
 
 export default Profile;
