@@ -1,65 +1,48 @@
-import Sidebar from "../components/layout/Sidebar";
-import Topbar from "../components/layout/Topbar";
+import DashboardLayout from "../components/layout/DashboardLayout";
 
 function Settings() {
   return (
-    <div
-      style={{
-        display: "flex",
-      }}
-    >
-      <Sidebar />
-
+    <DashboardLayout>
       <div
         style={{
-          flex: 1,
+          padding: "30px",
           background: "#0B3AB8",
-          minHeight: "100vh",
+          minHeight: "100%",
+          color: "white",
         }}
       >
-        <Topbar />
+        <h1>Settings</h1>
 
-        <div
-          style={{
-            padding: "30px",
-            color: "white",
-          }}
-        >
-          <h1>Settings</h1>
+        <h2>Notifications</h2>
 
-          <br />
+        <input type="checkbox" />
 
-          <h2>Notifications</h2>
+        <br />
+        <br />
 
-          <input type="checkbox" />
+        <h2>Languages</h2>
 
-          <br />
-          <br />
+        <select>
+          <option>English</option>
+          <option>Indonesia</option>
+        </select>
 
-          <h2>Languages</h2>
+        <br />
+        <br />
 
-          <select>
-            <option>English</option>
-            <option>Indonesia</option>
-          </select>
+        <h2>Tone</h2>
 
-          <br />
-          <br />
+        <select>
+          <option>Formal</option>
+          <option>Casual</option>
+        </select>
 
-          <h2>Tone</h2>
+        <br />
+        <br />
 
-          <select>
-            <option>Formal</option>
-            <option>Casual</option>
-          </select>
-
-          <br />
-          <br />
-
-          <button>Update</button>
-        </div>
+        <button>Update</button>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
 

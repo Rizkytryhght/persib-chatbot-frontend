@@ -1,16 +1,17 @@
-// Landing.jsx
-import { Link } from "react-router-dom";
+import DashboardLayout from "../components/layout/DashboardLayout";
 
 function Profile() {
   return (
-    <div>
-      <h1>Profile Page</h1>;
-
-      <Link to="/settings">
-        <button>Go to Settings</button>
-      </Link>
-    </div>
-  );  
+    <DashboardLayout>
+      <div
+        style={{
+          padding: "30px",
+        }}
+      >
+        <h1>Profile Page</h1>
+      </div>
+    </DashboardLayout>
+  );
 }
 
 export default Profile;
