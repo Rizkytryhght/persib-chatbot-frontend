@@ -7,7 +7,7 @@ function Profile() {
       <h1>Profile Page</h1>;
 
       <Link to="/settings">
-        <button>Go to settings </button>
+        <button>Go to Settings</button>
       </Link>
     </div>
   );  
