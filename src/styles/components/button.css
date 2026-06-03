@@ -1,0 +1,21 @@
+.app-button {
+  border: none;
+  border-radius: 12px;
+
+  padding: 12px 24px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background: #b58cff;
+
+  color: #ffffff;
+
+  transition: all 0.2s ease;
+}
+
+.app-button:hover {
+  opacity: 0.9;
+}

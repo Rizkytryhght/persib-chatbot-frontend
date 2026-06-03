@@ -1,11 +1,11 @@
-import "../../styles/topbar.css";
-
 function Topbar() {
   return (
     <header className="topbar">
 
-      <div className="topbar-user">
-        Budi Setiawan
+      <div></div>
+
+      <div className="user-info">
+        <span>Budi Setiawan</span>
       </div>
 
     </header>

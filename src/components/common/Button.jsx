@@ -1,18 +1,16 @@
+import "../../styles/components/button.css";
+
 function Button({
   children,
   onClick,
   type = "button",
+  className = "",
 }) {
   return (
     <button
       type={type}
       onClick={onClick}
-      style={{
-        padding: "12px 24px",
-        border: "none",
-        borderRadius: "12px",
-        cursor: "pointer",
-      }}
+      className={`app-button ${className}`}
     >
       {children}
     </button>

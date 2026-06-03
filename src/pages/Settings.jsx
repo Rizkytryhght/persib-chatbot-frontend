@@ -1,14 +1,81 @@
+import { useState } from "react";
+
 import DashboardLayout from "../components/layout/DashboardLayout";
 
+import NotificationCard from "../components/settings/NotificationCard";
+import LanguageCard from "../components/settings/LanguageCard";
+import ToneCard from "../components/settings/ToneCard";
+
+import Button from "../components/common/Button";
+
+import "../styles/settings.css";
+
 function Settings() {
+
+  const [notifications, setNotifications] =
+    useState(true);
+
+  const [systemLanguage, setSystemLanguage] =
+    useState("English");
+
+  const [
+    generationLanguage,
+    setGenerationLanguage,
+  ] = useState("English");
+
+  const [tone, setTone] =
+    useState("Formal");
+
+  const [
+    formalityLevel,
+    setFormalityLevel,
+  ] = useState("Casual");
+
   return (
     <DashboardLayout>
 
-      <h1>Settings</h1>
+      <div className="settings-page">
 
-      <p>
-        Settings page is under development
-      </p>
+        <h1 className="settings-title">
+          Settings
+        </h1>
+
+        <div className="settings-grid">
+
+          <NotificationCard
+            notifications={notifications}
+            setNotifications={setNotifications}
+          />
+
+          <LanguageCard
+            systemLanguage={systemLanguage}
+            setSystemLanguage={setSystemLanguage}
+            generationLanguage={generationLanguage}
+            setGenerationLanguage={
+              setGenerationLanguage
+            }
+          />
+
+          <ToneCard
+            tone={tone}
+            setTone={setTone}
+            formalityLevel={formalityLevel}
+            setFormalityLevel={
+              setFormalityLevel
+            }
+          />
+
+        </div>
+
+        <div className="settings-actions">
+
+          <Button>
+            Update Settings
+          </Button>
+
+        </div>
+
+      </div>
 
     </DashboardLayout>
   );

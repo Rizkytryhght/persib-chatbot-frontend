@@ -1,3 +1,5 @@
+import "../../styles/components/select.css";
+
 function CustomSelect({
   label,
   value,
@@ -5,10 +7,13 @@ function CustomSelect({
   onChange,
 }) {
   return (
-    <div>
-      <label>{label}</label>
+    <div className="custom-select">
 
-      <br />
+      {label && (
+        <label>
+          {label}
+        </label>
+      )}
 
       <select
         value={value}
@@ -23,6 +28,7 @@ function CustomSelect({
           </option>
         ))}
       </select>
+
     </div>
   );
 }

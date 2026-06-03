@@ -1,29 +1,69 @@
 import { Link } from "react-router-dom";
+
 import "../../styles/sidebar.css";
 
 function Sidebar() {
   return (
     <aside className="sidebar">
 
-      <div className="sidebar-header">
-        <div className="sidebar-title">
-          MAUNG BOT
+      <div>
+
+        <div className="sidebar-brand">
+
+          <h2>MAUNG BOT</h2>
+
+          <span>OFFICIAL AI</span>
+
         </div>
+
+        <button className="new-chat-btn">
+          + Obrolan Baru
+        </button>
+
+        <div className="menu-title">
+          MENU UTAMA
+        </div>
+
+        <nav>
+
+          <Link
+            to="/chat"
+            className="menu-item active"
+          >
+            💬 Chat Sekarang
+          </Link>
+
+        </nav>
+
       </div>
 
-      <div className="sidebar-menu">
+      <div className="sidebar-footer">
 
-        <Link to="/profile">
-          <div className="sidebar-item">
-            Profile
-          </div>
-        </Link>
+        <div className="settings-menu">
 
-        <Link to="/settings">
-          <div className="sidebar-item">
-            Settings
+          <div className="settings-title">
+            ⚙ Settings
           </div>
-        </Link>
+
+          <Link
+            to="/settings"
+            className="submenu-item"
+          >
+            Tone
+          </Link>
+
+          <Link
+            to="/settings"
+            className="submenu-item"
+          >
+            Language
+          </Link>
+
+        </div>
+
+        <button className="logout-btn">
+          ↪ Keluar
+        </button>
 
       </div>
 

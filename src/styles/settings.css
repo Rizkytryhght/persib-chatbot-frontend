@@ -1,0 +1,61 @@
+.settings-page {
+  max-width: 1000px;
+}
+
+.settings-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.settings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.settings-card {
+  background: var(--card-bg);
+
+  border-radius: var(--radius-lg);
+
+  padding: 24px;
+
+  border: 1px solid var(--border-color);
+}
+
+.settings-card h2 {
+  margin-bottom: 16px;
+}
+
+.settings-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  font-weight: 500;
+}
+
+.settings-select {
+  padding: 10px 12px;
+
+  border-radius: var(--radius-sm);
+
+  border: none;
+
+  min-width: 220px;
+}
+
+.settings-actions {
+  margin-top: 24px;
+
+  display: flex;
+
+  justify-content: flex-end;
+}
