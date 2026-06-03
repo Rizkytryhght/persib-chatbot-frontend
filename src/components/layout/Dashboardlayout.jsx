@@ -1,33 +1,24 @@
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
+import "../../styles/dashboard.css";
+
 function DashboardLayout({ children }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="dashboard-layout">
+
       <Sidebar />
 
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div className="dashboard-content">
+
         <Topbar />
 
-        <main
-          style={{
-            flex: 1,
-          }}
-        >
+        <main className="dashboard-main">
           {children}
         </main>
+
       </div>
+
     </div>
   );
 }

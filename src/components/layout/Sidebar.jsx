@@ -1,31 +1,33 @@
 import { Link } from "react-router-dom";
+import "../../styles/sidebar.css";
 
 function Sidebar() {
   return (
-    <div
-      style={{
-        width: "250px",
-        height: "100vh",
-        background: "#071425",
-        color: "white",
-        padding: "20px",
-      }}
-    >
-      <h2>MAUNG BOT</h2>
+    <aside className="sidebar">
 
-      <br />
+      <div className="sidebar-header">
+        <div className="sidebar-title">
+          MAUNG BOT
+        </div>
+      </div>
 
-      <Link to="/profile">
-        <button>Profile</button>
-      </Link>
+      <div className="sidebar-menu">
 
-      <br />
-      <br />
+        <Link to="/profile">
+          <div className="sidebar-item">
+            Profile
+          </div>
+        </Link>
 
-      <Link to="/settings">
-        <button>Settings</button>
-      </Link>
-    </div>
+        <Link to="/settings">
+          <div className="sidebar-item">
+            Settings
+          </div>
+        </Link>
+
+      </div>
+
+    </aside>
   );
 }
 
