@@ -1,3 +1,4 @@
+import Card from "../common/Card";
 import ToggleSwitch from "../common/ToggleSwitch";
 
 function NotificationCard({
@@ -5,8 +6,7 @@ function NotificationCard({
   setNotifications,
 }) {
   return (
-    <div className="settings-card">
-      <h2>Notifications</h2>
+    <Card title="Notifications">
 
       <div className="settings-row">
 
@@ -22,7 +22,8 @@ function NotificationCard({
         />
 
       </div>
-    </div>
+
+    </Card>
   );
 }
 

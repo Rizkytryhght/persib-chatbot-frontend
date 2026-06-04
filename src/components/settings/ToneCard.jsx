@@ -1,3 +1,4 @@
+import Card from "../common/Card";
 import CustomSelect from "../common/CustomSelect";
 
 function ToneCard({
@@ -8,9 +9,7 @@ function ToneCard({
   setFormalityLevel,
 }) {
   return (
-    <div className="settings-card">
-
-      <h2>Tone</h2>
+    <Card title="Tone">
 
       <div className="settings-row">
 
@@ -44,13 +43,15 @@ function ToneCard({
             "Casual",
           ]}
           onChange={(e) =>
-            setFormalityLevel(e.target.value)
+            setFormalityLevel(
+              e.target.value
+            )
           }
         />
 
       </div>
 
-    </div>
+    </Card>
   );
 }
 

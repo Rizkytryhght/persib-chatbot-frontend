@@ -1,17 +1,84 @@
 .topbar {
-  height: 72px;
+  height: 80px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 
   padding: 0 24px;
 
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 
   flex-shrink: 0;
 }
 
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-icon {
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
 .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
   font-weight: 600;
+  font-size: 14px;
+}
+
+.user-role {
+  font-size: 11px;
+
+  color: #f4c542;
+
+  letter-spacing: 1px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  transition: 0.2s ease;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+  color: inherit;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.profile-link:hover {
+  opacity: 0.8;
+}
+
+.profile-link:hover .user-avatar {
+  transform: scale(1.05);
 }

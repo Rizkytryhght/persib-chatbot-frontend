@@ -1,3 +1,4 @@
+import Card from "../common/Card";
 import CustomSelect from "../common/CustomSelect";
 
 function LanguageCard({
@@ -7,15 +8,8 @@ function LanguageCard({
   generationLanguage,
   setGenerationLanguage,
 }) {
-  const languages = [
-    "English",
-    "Indonesia",
-  ];
-
   return (
-    <div className="settings-card">
-
-      <h2>Language</h2>
+    <Card title="Language">
 
       <div className="settings-row">
 
@@ -25,7 +19,10 @@ function LanguageCard({
 
         <CustomSelect
           value={systemLanguage}
-          options={languages}
+          options={[
+            "English",
+            "Indonesia",
+          ]}
           onChange={(e) =>
             setSystemLanguage(e.target.value)
           }
@@ -41,15 +38,20 @@ function LanguageCard({
 
         <CustomSelect
           value={generationLanguage}
-          options={languages}
+          options={[
+            "English",
+            "Indonesia",
+          ]}
           onChange={(e) =>
-            setGenerationLanguage(e.target.value)
+            setGenerationLanguage(
+              e.target.value
+            )
           }
         />
 
       </div>
 
-    </div>
+    </Card>
   );
 }
 
