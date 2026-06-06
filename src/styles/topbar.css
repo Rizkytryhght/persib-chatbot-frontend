@@ -1,52 +1,38 @@
 .topbar {
-  height: 80px;
+  height: 64px; /* Dikecilkan dari 80px */
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 28px;
+  padding: 0 20px; /* Padding lebih sempit */
   background: #293fbb;
-  border-bottom: 1px solid
-    rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   flex-shrink: 0;
 }
 
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px; /* Gap lebih rapat */
 }
-
 /* =====================
    ICON BUTTON
 ===================== */
 .topbar-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid
-    rgba(255,255,255,0.08);
-  background: rgba(
-    255,
-    255,
-    255,
-    0.04
-  );
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .topbar-icon:hover {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.08
-  );
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* =====================
@@ -55,21 +41,16 @@
 .profile-link {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 4px 8px;
-  border-radius: 12px;
-  color: inherit;
+  gap: 10px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  color: white;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: background 0.2s;
 }
 
 .profile-link:hover {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.05
-  );
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .user-info {
@@ -79,36 +60,29 @@
 }
 
 .user-name {
-  font-size: 14px;
+  font-size: 13px; /* Sedikit lebih kecil agar lebih elegan */
   font-weight: 600;
-  color: white;
 }
 
 .user-role {
-  font-size: 10px;
-  color: #f4c542;
+  font-size: 9px; /* Lebih kecil agar tidak mendominasi */
+  color: #fbbf24;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .user-avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
+  width: 36px; /* Disesuaikan dengan tinggi topbar */
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  font-size: 12px;
   font-weight: 700;
-  border: 2px solid
-    rgba(59,130,246,0.35);
-  transition: 0.2s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .profile-link:hover .user-avatar {
