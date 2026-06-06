@@ -1,30 +1,24 @@
 import Input from "../common/Input";
 
-import userData from "../../data/userData";
-
-function ProfileInfoSection() {
+function ProfileInfoSection({ formData, onChange }) {
   return (
     <div className="profile-section">
-
-      <h2>
-        Personal Information
-      </h2>
-
+      <h2>Personal Information</h2>
       <div className="profile-grid">
-
         <Input
           label="Your fullname*"
-          value={userData.name}
+          name="name" // Harus sama dengan key di state formData
+          value={formData.name}
+          onChange={onChange}
         />
-
         <Input
           label="Your email*"
+          name="email" // Harus sama dengan key di state formData
           type="email"
-          value={userData.email}
+          value={formData.email}
+          onChange={onChange}
         />
-
       </div>
-
     </div>
   );
 }

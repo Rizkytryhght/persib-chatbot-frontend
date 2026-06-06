@@ -1,7 +1,7 @@
 /* src/styles/profile.css */
 
 .profile-page {
-  max-width: 900px; /* Batasi lebar form agar tidak terlalu memanjang ke kanan */
+  max-width: 1000px; /* Batasi lebar form agar tidak terlalu memanjang ke kanan */
 }
 
 /* --- TABS --- */
