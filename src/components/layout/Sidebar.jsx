@@ -1,10 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// ✨ 1. Import useNavigate (dan Link yang sudah ada)
+import { Link, useNavigate } from "react-router-dom"; 
 import "../../styles/sidebar.css";
 
 function Sidebar() {
-  // Tambahkan state ini. Default 'true' agar langsung terbuka.
   const [isSettingsOpen, setIsSettingsOpen] = useState(true);
+  
+  // ✨ 2. Inisialisasi navigate
+  const navigate = useNavigate();
+
+  // ✨ 3. Buat fungsi untuk handle logout
+  const handleLogout = () => {
+    // Jika nanti ada proses hapus token/session, bisa ditambahkan di sini
+    // localStorage.removeItem("token");
+    
+    // Arahkan kembali ke Landing Page (path "/")
+    navigate("/");
+  };
 
   return (
     <aside className="sidebar">
@@ -53,7 +65,6 @@ function Sidebar() {
       <div className="sidebar-footer">
         
         <div className="settings-menu">
-          {/* Tambahkan onClick untuk mengubah state */}
           <div 
             className="settings-header" 
             onClick={() => setIsSettingsOpen(!isSettingsOpen)}
@@ -65,7 +76,6 @@ function Sidebar() {
               </svg>
               Settings
             </div>
-            {/* Ikon panah dengan class dinamis agar bisa diputar saat tertutup */}
             <svg 
               className={`chevron-icon ${isSettingsOpen ? 'open' : 'closed'}`} 
               width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
@@ -74,7 +84,6 @@ function Sidebar() {
             </svg>
           </div>
 
-          {/* Render menu list HANYA jika isSettingsOpen bernilai true */}
           {isSettingsOpen && (
             <div className="submenu-list">
               <Link to="/settings" className="submenu-item">Tone</Link>
@@ -83,7 +92,8 @@ function Sidebar() {
           )}
         </div>
 
-        <button className="logout-btn">
+        {/* ✨ 4. Tambahkan event onClick memanggil handleLogout */}
+        <button className="logout-btn" onClick={handleLogout}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
