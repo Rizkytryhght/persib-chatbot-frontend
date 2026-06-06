@@ -17,25 +17,25 @@ function Topbar() {
         </button>
 
         <Link
-        to="/profile"
-        className="profile-link"
+          to="/profile"
+          className="profile-link"
         >
 
-            <div className="user-info">
+          <div className="user-info">
 
-                <div className="user-name">
-                {userData.name}
-                </div>
-
-                <div className="user-role">
-                {userData.role}
-                </div>
-
+            <div className="user-name">
+              {userData.name}
             </div>
 
-            <div className="user-avatar">
-                👤
+            <div className="user-role">
+              {userData.role}
             </div>
+
+          </div>
+
+          <div className="user-avatar">
+            BS
+          </div>
 
         </Link>
 

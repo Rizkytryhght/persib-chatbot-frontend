@@ -1,3 +1,5 @@
+import "../../styles/components/input.css";
+
 function Input({
   label,
   type = "text",
@@ -7,9 +9,9 @@ function Input({
   return (
     <div className="form-group">
 
-      <label>
-        {label}
-      </label>
+      {label && (
+        <label>{label}</label>
+      )}
 
       <input
         type={type}

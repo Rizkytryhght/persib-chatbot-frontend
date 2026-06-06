@@ -1,7 +1,6 @@
 import Input from "../common/Input";
 
-import userData
-from "../../data/userData";
+import userData from "../../data/userData";
 
 function ProfileInfoSection() {
   return (

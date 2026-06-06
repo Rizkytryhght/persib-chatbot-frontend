@@ -69,9 +69,9 @@ function Settings() {
 
         <div className="settings-actions">
 
-          <Button>
-            Update Settings
-          </Button>
+        <Button className="profile-update-btn">
+          Update →
+        </Button>
 
         </div>
 

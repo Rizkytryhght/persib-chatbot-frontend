@@ -1,5 +1,4 @@
-import userData
-from "../../data/userData";
+import userData from "../../data/userData";
 
 function ProfileAvatar() {
   return (
@@ -13,11 +12,11 @@ function ProfileAvatar() {
           className="avatar-image"
         />
 
-        <button
-          className="avatar-edit-btn"
-        >
-          ✏️
-        </button>
+      <button
+        className="avatar-edit-btn"
+      >
+        ✎
+      </button>
 
       </div>
 

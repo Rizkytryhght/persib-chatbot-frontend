@@ -13,7 +13,7 @@
   background: transparent;
   border: none;
   color: #8f9bb3;
-  padding: 16px 0;
+  padding: 0 0 16px 0;
   cursor: pointer;
 }
 
@@ -46,18 +46,29 @@
 
 .avatar-edit-btn {
   position: absolute;
-  right: -10px;
-  bottom: -10px;
+
+  right: -6px;
+  bottom: -6px;
+
+  width: 32px;
+  height: 32px;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
 
-  padding: 8px;
+  background: #3b82f6;
+
+  color: white;
+
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-section {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .profile-section h2 {
@@ -94,4 +105,13 @@
 
 .profile-actions {
   margin-top: 24px;
+}
+
+.profile-divider {
+  height: 1px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  margin-bottom: 40px;
 }

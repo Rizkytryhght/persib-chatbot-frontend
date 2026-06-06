@@ -12,13 +12,15 @@ function ProfileForm() {
 
       <ProfileInfoSection />
 
+      <div className="profile-divider"></div>
+
       <PasswordSection />
 
       <div className="profile-actions">
 
-        <Button>
-          Update →
-        </Button>
+      <Button className="profile-update-btn">
+        Update →
+      </Button>
 
       </div>
 

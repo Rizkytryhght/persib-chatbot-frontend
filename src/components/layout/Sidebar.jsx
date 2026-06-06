@@ -10,9 +10,14 @@ function Sidebar() {
 
         <div className="sidebar-brand">
 
-          <h2>MAUNG BOT</h2>
+          <div className="brand-logo">
+            🤖
+          </div>
 
-          <span>OFFICIAL AI</span>
+          <div className="brand-text">
+            <h2>MAUNG BOT</h2>
+            <span>OFFICIAL AI</span>
+          </div>
 
         </div>
 
