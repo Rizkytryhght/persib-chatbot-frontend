@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
 import "../../styles/sidebar.css";
 
-function Sidebar() {
+function Sidebar({ isOpen, setIsOpen }) {
   const [isSettingsOpen, setIsSettingsOpen] = useState(true);
   
   // ✨ 2. Inisialisasi navigate
@@ -101,7 +101,12 @@ function Sidebar() {
           </svg>
           Keluar
         </button>
-
+        <button 
+          className="sidebar-close-btn"
+          onClick={() => setIsOpen(false)}
+        >
+          ✕
+        </button>
       </div>
     </aside>
   );

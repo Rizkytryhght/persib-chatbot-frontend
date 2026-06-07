@@ -3,9 +3,15 @@ import userData from "../../data/userData";
 import { Link } from "react-router-dom";
 import profileImage from "../../assets/images/fotoDefault.jpg"
 
-function Topbar() {
+function Topbar({ toggleSidebar }) {
   return (
     <header className="topbar">
+      <div className="topbar-left">
+        <button className="hamburger-btn" onClick={toggleSidebar}>
+          ☰
+        </button>
+      </div>
+      
       <div className="topbar-right">
         <button className="topbar-icon">💬</button>
         <button className="topbar-icon">🛡️</button>

@@ -210,3 +210,23 @@
 .chevron-icon.closed {
   transform: rotate(-90deg); /* Putar ke kiri saat menu ditutup */
 }
+
+/* Mobile Sidebar */
+.sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-close-btn {
+    display: block;
+  }
+}

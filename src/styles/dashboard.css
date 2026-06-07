@@ -19,3 +19,78 @@
   padding: 24px; /* Spacing sedikit diperlonggar agar lebih lega */
   background-color: #003399; /* Latar belakang dasar gelap premium */
 }
+
+/* ==================== RESPONSIVE ==================== */
+
+.dashboard-layout {
+  position: relative;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 90;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .dashboard-main {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr; /* Stack input jadi 1 kolom */
+    gap: 20px;
+  }
+
+  .profile-card {
+    padding: 24px 20px;
+  }
+
+  .profile-page {
+    padding-top: 10px;
+  }
+
+  .profile-tabs {
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .dashboard-main {
+    padding: 16px;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 480px) {
+  .sidebar-brand {
+    gap: 8px;
+  }
+  
+  .brand-text h2 {
+    font-size: 15px;
+  }
+}

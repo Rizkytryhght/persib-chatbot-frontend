@@ -89,3 +89,29 @@
 .profile-link:hover .user-avatar {
   transform: scale(1.05);
 }
+
+/* Hamburger Menu */
+.topbar-left {
+  display: none;
+  align-items: center;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .topbar {
+    padding: 0 16px;
+  }
+  
+  .topbar-left {
+    display: flex;
+  }
+}
