@@ -333,6 +333,45 @@ ul { list-style: none; padding: 0; margin: 0; }
 .feature-title { font-size: 0.95rem; margin-bottom: 8px; font-weight: 600;}
 .feature-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
+.knowledge-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Memastikan seluruh alur berada di tengah */
+  gap: 24px; /* Jarak antar elemen dan panah */
+  margin: 2rem auto;
+  flex-wrap: wrap; /* Membantu jika layar mulai mengecil */
+}
+
+.flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 120px; /* Menjaga teks agar tetap rapi jika panjang */
+}
+
+.flow-node .icon {
+  font-size: 2.5rem; /* Ukuran ikon dipertegas */
+  margin-bottom: 12px;
+}
+
+/* Jika Anda menggunakan tag p atau span untuk teks di bawah ikon */
+.flow-node p, 
+.flow-node span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.flow-arrow {
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* ==========================================================================
    9. PROCESS FLOW (HOW IT WORKS)
    ========================================================================== */
@@ -444,16 +483,61 @@ ul { list-style: none; padding: 0; margin: 0; }
    12. TECHNOLOGY & FAQ SECTION
    ========================================================================== */
 .technology-section {
-  display: flex; flex-direction: column; justify-content: center; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Pastikan seluruh konten di tengah */
+  justify-content: center;
+  height: 100%;
+  text-align: center;
 }
 
 .tech-flex {
-  display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px 48px; /* Jarak vertikal 32px, horizontal 48px */
+  margin-top: 40px;
+  flex-wrap: wrap;
+  
+  /* TRIK RAHASIA: 
+     Membatasi lebar maksimal container agar item ke-4 dan ke-5 
+     dipaksa turun ke baris baru, menciptakan formasi 3-2 yang rapi */
+  max-width: 480px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.tech-item { text-align: center; }
-.tech-icon { font-size: 2.5rem; margin-bottom: 12px; }
-.tech-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600;}
+.tech-item { 
+  text-align: center;
+  /* Menyamakan lebar setiap box agar grid bayangan tetap seimbang */
+  width: 100px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px); /* Tambahan efek hover agar lebih interaktif */
+}
+
+/* Dukungan jika menggunakan tag <img> atau icon bawaan */
+.tech-item img,
+.tech-icon { 
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  font-size: 3rem; /* Berlaku jika icon menggunakan font/emoji */
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2)); /* Memberi efek kedalaman */
+}
+
+.tech-label { 
+  font-size: 0.95rem; 
+  color: var(--text-main); /* Menggunakan warna utama agar kontrasnya lebih baik dari sebelumnya */
+  font-weight: 600; 
+  line-height: 1.3;
+}
 
 .accordion { border-top: 1px solid var(--border-color); margin-top: 24px; }
 .accordion-item { border-bottom: 1px solid var(--border-color); }
@@ -626,6 +710,26 @@ ul { list-style: none; padding: 0; margin: 0; }
 
   .cta-card {
     padding: 30px 20px;
+  }
+
+  .knowledge-flow {
+    flex-direction: column; /* Ubah alur menjadi vertikal di HP */
+    gap: 16px;
+  }
+  
+  .flow-arrow {
+    /* Trik Estetika: Putar panah kanan menjadi panah bawah di layar HP */
+    transform: rotate(90deg);
+    margin: 8px 0;
+  }
+
+  .tech-flex {
+    gap: 24px;
+    max-width: 320px; /* Memaksa menjadi layout 2-2-1 di layar kecil */
+  }
+  
+  .tech-item {
+    width: 90px;
   }
 }
 
