@@ -207,38 +207,51 @@ ul { list-style: none; padding: 0; margin: 0; }
 .hero-section {
   display: flex;
   align-items: center;
-  padding: 50px 5%;
+  padding: 70px 5%;
   gap: 60px;
 }
 
-.hero-content { flex: 1; }
+/* Container utama untuk membatasi lebar konten */
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left; /* Rata Kiri */
+}
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.1;
-  margin-bottom: 24px;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
 .hero-description {
-  color: var(--text-muted);
   font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
   line-height: 1.6;
-  margin-bottom: 40px;
-  max-width: 90%;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 16px;
+  gap: 15px;
+  justify-content: flex-start;
 }
 
 .hero-mockup {
   flex: 1;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
-
 /* ==========================================================================
    7. CHAT WINDOW MOCKUP
    ========================================================================== */
@@ -261,7 +274,11 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .bot-avatar { font-size: 1.5rem; margin-right: 12px; }
-.bot-info h4 { font-size: 0.9rem; margin-bottom: 4px; }
+.bot-info h4 { 
+  font-size: 0.9rem; 
+  margin-bottom: 4px;
+  text-align: left; 
+}
 .bot-info p { 
   font-size: 0.75rem; color: var(--text-muted); margin: 0; 
   display: flex; align-items: center; gap: 6px; 
@@ -866,6 +883,25 @@ ul { list-style: none; padding: 0; margin: 0; }
     text-align: left;
     gap: 12px;
     padding-top: 24px;
+  }
+
+  .hero-container {
+    flex-direction: column; /* Ubah jadi tumpuk atas-bawah */
+    padding: 10px 5%;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: left; /* Rata tengah di HP agar tetap cantik */
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Tombol jadi bertumpuk */
+    justify-content: center;
   }
 }
 
