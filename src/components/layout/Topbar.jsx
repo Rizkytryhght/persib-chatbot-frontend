@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import profileImage from "../../assets/images/fotoDefault.jpg";
 import userData from "../../data/userData";
+import "../../styles/topbar.css";
 
 function Topbar({ toggleSidebar }) {
   return (
     <header className="topbar">
-      <button className="hamburger-btn" onClick={toggleSidebar}>
-        ☰
-      </button>
+      {/* Bungkus dengan div class topbar-left */}
+      <div className="topbar-left">
+        <button className="hamburger-btn" onClick={toggleSidebar}>
+          ☰
+        </button>
+      </div>
 
       <div className="topbar-right">
         <button className="topbar-icon">💬</button>
@@ -19,11 +23,7 @@ function Topbar({ toggleSidebar }) {
             <div className="user-role">{userData.role}</div>
           </div>
           <div className="user-avatar">
-            <img 
-              src={profileImage} 
-              alt={userData.name} 
-              className="avatar-image-topbar" 
-            />
+            <img src={profileImage} alt={userData.name} className="avatar-image-topbar" />
           </div>
         </Link>
       </div>
@@ -32,3 +32,4 @@ function Topbar({ toggleSidebar }) {
 }
 
 export default Topbar;
+
