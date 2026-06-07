@@ -61,7 +61,7 @@
 
 .tab.active {
   color: #ffffff;
-  border-bottom: 3px solid #3B82F6;
+  border-bottom: 1px solid #3B82F6;
   position: relative;
 }
 
@@ -106,7 +106,7 @@
   bottom: -8px;
   width: 28px;
   height: 28px;
-  border: 3px solid #0B1120;
+  border: 2px solid #a3b9f0;
   border-radius: 8px;
   background: #3B82F6;
   color: white;

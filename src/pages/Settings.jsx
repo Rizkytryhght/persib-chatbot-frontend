@@ -6,7 +6,6 @@ import ToneCard from "../components/settings/ToneCard";
 import Button from "../components/common/Button";
 import "../styles/settings.css";
 
-// Definisikan key agar konsisten dan mudah diubah
 const KEYS = {
   NOTIFICATIONS: "settings_notifications",
   SYSTEM_LANG: "settings_systemLanguage",

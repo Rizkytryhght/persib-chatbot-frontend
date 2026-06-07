@@ -1,17 +1,37 @@
 import React from 'react';
+import persibLogo from "../../assets/images/persib-logo.png";
+import instagramIcon from "../../assets/images/instagram2.jpg";
+import linkedinIcon from "../../assets/images/linkedin.png";
+import youtubeIcon from "../../assets/images/youtube2.jpg";
+import twitterIcon from "../../assets/images/X2.jpg";
 
+const SOCIAL_LINKS = [
+  { href: "https://x.com/persib", icon: twitterIcon, label: "X / Twitter" },
+  { href: "https://www.instagram.com/persib/?hl=id", icon: instagramIcon, label: "Instagram" },
+  { href: "https://id.linkedin.com/company/persib", icon: linkedinIcon, label: "LinkedIn" },
+  { href: "https://www.youtube.com/channel/UCq9VjkTSRBvlyr0sSXwm8Kw", icon: youtubeIcon, label: "YouTube" },
+];
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <div className="footer-logo">🛡️ PERSIB AI Branding</div>
+          <div className="footer-logo">  
+            <img src={persibLogo} alt="Persib Logo" className="footer-logo-img"/>
+            <span>PERSIB</span></div>
           <p className="social-text">Cleaned social media</p>
           <div className="social-icons">
-            <span>🐦</span>
-            <span>📸</span>
-            <span>in</span>
-            <span>▶️</span>
+            {SOCIAL_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+              >
+                <img src={link.icon} alt={link.label} className="social-icon" />
+              </a>
+            ))}
           </div>
         </div>
         <div className="footer-links-grid">
