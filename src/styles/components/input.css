@@ -11,7 +11,6 @@
   color: #a8b3cf;
 }
 
-/* Wrapper untuk menjaga posisi ikon */
 .input-wrapper {
   position: relative;
   width: 100%;
@@ -26,10 +25,9 @@
   background: #1a2040;
   color: white;
   transition: 0.2s ease;
-  box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
+  box-sizing: border-box; 
 }
 
-/* Jika password, beri ruang ekstra di kanan agar teks tidak tertutup ikon */
 .form-group input[type="password"],
 .form-group input[type="text"] {
   padding-right: 48px;
@@ -45,7 +43,6 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
-/* Pengaturan Ikon Mata */
 .toggle-password {
   position: absolute;
   right: 16px;

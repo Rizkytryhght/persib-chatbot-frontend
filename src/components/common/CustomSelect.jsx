@@ -8,27 +8,18 @@ function CustomSelect({
 }) {
   return (
     <div className="custom-select">
-
       {label && (
         <label>
           {label}
         </label>
       )}
-
-      <select
-        value={value}
-        onChange={onChange}
-      >
+      <select value={value} onChange={onChange}>
         {options.map((option) => (
-          <option
-            key={option}
-            value={option}
-          >
+          <option key={option} value={option}>
             {option}
           </option>
         ))}
       </select>
-
     </div>
   );
 }

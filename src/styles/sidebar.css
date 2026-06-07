@@ -16,7 +16,6 @@
   position: relative;
 }
 
-/* Close Button (Mobile) */
 .sidebar-close-btn {
   display: none;
   position: absolute;
@@ -32,7 +31,7 @@
 }
 
 /* =========================
-   BRAND, BUTTON, MENU (sama seperti sebelumnya)
+   BRAND, BUTTON, MENU 
 ========================= */
 .sidebar-brand {
   display: flex;
@@ -117,7 +116,6 @@
   border: 1px solid #334155;
 }
 
-/* Settings & Footer */
 .sidebar-footer {
   border-top: 1px solid rgba(40, 104, 241, 0.6);
   padding-top: 24px;

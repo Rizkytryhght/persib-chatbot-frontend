@@ -1,20 +1,11 @@
 import { useState } from "react";
-// ✨ 1. Import useNavigate (dan Link yang sudah ada)
 import { Link, useNavigate } from "react-router-dom"; 
 import "../../styles/sidebar.css";
 
 function Sidebar({ isOpen, setIsOpen }) {
   const [isSettingsOpen, setIsSettingsOpen] = useState(true);
-  
-  // ✨ 2. Inisialisasi navigate
   const navigate = useNavigate();
-
-  // ✨ 3. Buat fungsi untuk handle logout
   const handleLogout = () => {
-    // Jika nanti ada proses hapus token/session, bisa ditambahkan di sini
-    // localStorage.removeItem("token");
-    
-    // Arahkan kembali ke Landing Page (path "/")
     navigate("/");
   };
 
@@ -63,7 +54,6 @@ function Sidebar({ isOpen, setIsOpen }) {
 
       {/* === FOOTER === */}
       <div className="sidebar-footer">
-        
         <div className="settings-menu">
           <div 
             className="settings-header" 
@@ -92,7 +82,6 @@ function Sidebar({ isOpen, setIsOpen }) {
           )}
         </div>
 
-        {/* ✨ 4. Tambahkan event onClick memanggil handleLogout */}
         <button className="logout-btn" onClick={handleLogout}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>

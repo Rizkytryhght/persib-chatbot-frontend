@@ -1,40 +1,24 @@
 import CustomSelect from "../common/CustomSelect";
 
-function ToneSection({
-  tone,
-  setTone,
+const TONE_OPTIONS = ["Formal", "Casual"];
 
-  formalityLevel,
-  setFormalityLevel,
-}) {
+function ToneSection({ tone, setTone, formalityLevel, setFormalityLevel }) {
   return (
-    <>
+    <div className="tone-section">
       <CustomSelect
         label="Tone"
         value={tone}
-        options={[
-          "Formal",
-          "Casual",
-        ]}
-        onChange={(e) =>
-          setTone(e.target.value)
-        }
+        options={TONE_OPTIONS}
+        onChange={(e) => setTone(e.target.value)}
       />
-
-      <br />
 
       <CustomSelect
         label="Formality Level"
         value={formalityLevel}
-        options={[
-          "Formal",
-          "Casual",
-        ]}
-        onChange={(e) =>
-          setFormalityLevel(e.target.value)
-        }
+        options={TONE_OPTIONS}
+        onChange={(e) => setFormalityLevel(e.target.value)}
       />
-    </>
+    </div>
   );
 }
 

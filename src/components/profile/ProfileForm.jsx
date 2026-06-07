@@ -1,4 +1,3 @@
-// components/profile/ProfileForm.js
 import { useState } from "react";
 import userData from "../../data/userData";
 import ProfileAvatar from "./ProfileAvatar";
@@ -24,7 +23,7 @@ function ProfileForm() {
   const handleSave = () => {
     // Menyimpan data ke localStorage
     localStorage.setItem("userProfile", JSON.stringify(formData));
-    alert("Profil berhasil disimpan di browser!"); // Feedback visual
+    alert("Profil berhasil disimpan di browser!");
   };
 
   return (

@@ -8,7 +8,6 @@ const ScalabilitySection = () => {
       <p className="section-description">Siap Menghadapi Lonjakan Pertanyaan Saat Pertandingan Besar.</p>
       
       <Card className="dashboard-mockup">
-        {/* Placeholder for Analytics Image/Graph */}
         <div className="mockup-header">Analytics</div>
         <div className="mockup-graph-area">
           <div className="graph-main"></div>

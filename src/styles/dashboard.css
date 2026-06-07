@@ -8,10 +8,9 @@
   background-color: #003399;
 }
 
-/* Base Sidebar (PENTING: Harus ada agar sidebar muncul) */
 .sidebar {
   width: 280px;
-  background-color: #002266; /* Contoh warna latar sidebar */
+  background-color: #002266;
   height: 100vh;
   flex-shrink: 0;
   transition: all 0.3s ease;
@@ -70,7 +69,7 @@
   
   .sidebar {
     position: fixed;
-    left: -280px; /* Sembunyi ke kiri */
+    left: -280px;
     top: 0;
     z-index: 100;
     box-shadow: 4px 0 15px rgba(0,0,0,0.3);

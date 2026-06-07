@@ -1,18 +1,12 @@
 import ToggleSwitch from "../common/ToggleSwitch";
 
-function NotificationSection({
-  notifications,
-  setNotifications,
-}) {
+function NotificationSection({ notifications, setNotifications }) {
   return (
-    <div>
+    <div className="notification-section">
       <h2>Notifications</h2>
-
       <ToggleSwitch
         checked={notifications}
-        onChange={() =>
-          setNotifications(!notifications)
-        }
+        onChange={() => setNotifications((prev) => !prev)}
       />
     </div>
   );

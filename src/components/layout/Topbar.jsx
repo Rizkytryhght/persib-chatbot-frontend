@@ -6,7 +6,6 @@ import "../../styles/topbar.css";
 function Topbar({ toggleSidebar }) {
   return (
     <header className="topbar">
-      {/* Bungkus dengan div class topbar-left */}
       <div className="topbar-left">
         <button className="hamburger-btn" onClick={toggleSidebar}>
           ☰

@@ -7,13 +7,13 @@ function ProfileInfoSection({ formData, onChange }) {
       <div className="profile-grid">
         <Input
           label="Your fullname*"
-          name="name" // Harus sama dengan key di state formData
+          name="name" 
           value={formData.name}
           onChange={onChange}
         />
         <Input
           label="Your email*"
-          name="email" // Harus sama dengan key di state formData
+          name="email"
           type="email"
           value={formData.email}
           onChange={onChange}

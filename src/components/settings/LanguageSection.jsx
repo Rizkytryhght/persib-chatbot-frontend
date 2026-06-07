@@ -1,39 +1,29 @@
 import CustomSelect from "../common/CustomSelect";
 
+const LANGUAGES = ["English", "Indonesia"];
+
 function LanguageSection({
   systemLanguage,
   setSystemLanguage,
-
   generationLanguage,
   setGenerationLanguage,
 }) {
-  const languages = [
-    "English",
-    "Indonesia",
-  ];
-
   return (
-    <>
+    <div className="language-section">
       <CustomSelect
         label="System Language"
         value={systemLanguage}
-        options={languages}
-        onChange={(e) =>
-          setSystemLanguage(e.target.value)
-        }
+        options={LANGUAGES}
+        onChange={(e) => setSystemLanguage(e.target.value)}
       />
-
-      <br />
 
       <CustomSelect
         label="Generation Language"
         value={generationLanguage}
-        options={languages}
-        onChange={(e) =>
-          setGenerationLanguage(e.target.value)
-        }
+        options={LANGUAGES}
+        onChange={(e) => setGenerationLanguage(e.target.value)}
       />
-    </>
+    </div>
   );
 }
 

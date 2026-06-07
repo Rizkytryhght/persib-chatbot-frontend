@@ -21,7 +21,6 @@ function DashboardLayout({ children }) {
         </main>
       </div>
 
-      {/* Overlay */}
       {isSidebarOpen && (
         <div 
           className="sidebar-overlay" 

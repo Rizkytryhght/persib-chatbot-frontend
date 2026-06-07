@@ -1,4 +1,3 @@
-// components/common/Input.js
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import "../../styles/components/input.css";
@@ -13,9 +12,9 @@ function Input({ label, type = "text", value, onChange, name, placeholder }) {
       <div className="input-wrapper">
         <input
           type={inputType}
-          name={name} // Wajib ada untuk identifikasi
-          value={value} // Sekarang menggunakan value (Controlled)
-          onChange={onChange} // Menjalankan fungsi update state
+          name={name} 
+          value={value}
+          onChange={onChange}
           placeholder={placeholder}
         />
         {type === "password" && (
@@ -31,4 +30,5 @@ function Input({ label, type = "text", value, onChange, name, placeholder }) {
     </div>
   );
 }
+
 export default Input;

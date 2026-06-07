@@ -18,8 +18,6 @@ const LandingPage = () => {
       <div className="container">
         <Navbar />
         <HeroSection />
-        
-        {/* Adhering strictly to the 2-column layout pattern from the design */}
         <div className="landing-grid">
           <div className="grid-left"><KnowledgeSection /></div>
           <div className="grid-right"><FeaturesSection /></div>

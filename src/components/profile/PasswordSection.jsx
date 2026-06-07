@@ -10,17 +10,17 @@ function PasswordSection({ formData, onChange }) {
           label="Password*"
           name="password"
           type="password"
-          value={formData.password || ""} // Tambahkan || "" agar tidak error saat kosong
+          value={formData.password || ""}
           onChange={onChange}
-          placeholder="Masukkan password baru" // << Ini yang bikin placeholder muncul
+          placeholder="Masukkan password baru" 
         />
         <Input
           label="Confirm Password*"
           name="confirmPassword"
           type="password"
-          value={formData.confirmPassword || ""} // Tambahkan || ""
+          value={formData.confirmPassword || ""} 
           onChange={onChange}
-          placeholder="Konfirmasi password baru" // << Ini yang bikin placeholder muncul
+          placeholder="Konfirmasi password baru" 
         />
       </div>
     </div>
