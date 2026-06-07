@@ -128,6 +128,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   align-items: center;
   padding: 50px 70px 50px 70px;
   gap: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content { flex: 1; }
@@ -262,12 +265,19 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .info-section { padding: 20px 0; }
 
-.knowledge-flow, .process-flow {
+.knowledge-flow{
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
   flex-wrap: wrap;
+}
+
+.process-flow{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .flow-node {
@@ -333,24 +343,88 @@ ul { list-style: none; padding: 0; margin: 0; }
   background: #141C2E;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
+
+.graph-main {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.analytics-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .mockup-header { font-size: 0.8rem; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); text-align: left;}
 .mockup-graph-area { display: flex; gap: 16px; margin-top: 16px; flex: 1;}
 .graph-main { flex: 3; border: 1px dashed var(--border-color); border-radius: 8px;}
 .graph-sidebar { flex: 1; display: flex; flex-direction: column; gap: 8px; }
 .stat-box { background: rgba(255,255,255,0.02); padding: 10px; border-radius: 6px; font-size: 0.7rem; text-align: left; border: 1px solid var(--border-color);}
 
+/* ==========================
+   USE CASE SECTION
+========================== */
+
 .use-case-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 20px;
+  grid-template-columns: 1fr;
 }
 
-.use-case-card { padding: 0; overflow: hidden; }
-.use-case-image-placeholder { height: 80px; background: #2A344A; }
-.use-case-content { padding: 16px; }
-.use-case-title { font-size: 0.9rem; margin-bottom: 4px; }
-.use-case-desc { font-size: 0.8rem; color: var(--text-muted); margin: 0;}
+/* Responsif: Grid menjadi 3 kolom di layar tablet/desktop */
+@media (min-width: 768px) {
+  .use-case-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.use-case-card {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+
+.use-case-card:hover {
+  transform: translateY(-4px);
+}
+
+.use-case-image-wrapper {
+  border-radius: 14px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.use-case-image {
+  display: block;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.use-case-card:hover .use-case-image {
+  transform: scale(1.08);
+}
+
+.use-case-content {
+  padding-top: 16px;
+}
+
+.use-case-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.use-case-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
 
 .technology-section {
   display: flex;
@@ -443,4 +517,93 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-top: 1px solid var(--border-color);
   padding-top: 20px; display: flex; justify-content: space-between;
   color: var(--text-muted); font-size: 0.8rem;
+}
+
+
+
+
+.section-header {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.process-step {
+  width: 180px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 16px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.step-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.step-desc {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.process-line {
+  width: 80px;
+  height: 2px;
+  margin-top: 95px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.15)
+  );
+}
+.grid-full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 1200px) {
+  .process-flow {
+    gap: 2rem;
+  }
+
+  .process-line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-step {
+    width: 100%;
+    max-width: 320px;
+  }
 }

@@ -24,13 +24,13 @@ const LandingPage = () => {
           <div className="grid-left"><KnowledgeSection /></div>
           <div className="grid-right"><FeaturesSection /></div>
           
-          <div className="grid-left"><HowItWorksSection /></div>
-          <div className="grid-right"><ScalabilitySection /></div>
+          <div className="grid-full"><HowItWorksSection /></div>
+          <div className="grid-full" id="features"><UseCaseSection /></div>
           
-          <div className="grid-left"><UseCaseSection /></div>
-          <div className="grid-right"><TechnologySection /></div>
+          <div className="grid-left"><ScalabilitySection /></div>          
+          <div className="grid-right" id="technology"><TechnologySection /></div>
           
-          <div className="grid-left"><FAQSection /></div>
+          <div className="grid-left" id="faq"><FAQSection /></div>
           <div className="grid-right"><CTASection /></div>
         </div>
       </div>

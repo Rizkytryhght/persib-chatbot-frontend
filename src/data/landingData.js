@@ -1,3 +1,9 @@
+import ticketingImg from "../assets/images/ticketing.jpg";
+import membershipImg from "../assets/images/membership.jpg";
+import scheduleImg from "../assets/images/schedule.jpg";
+import merchImg from "../assets/images/merch.png";
+import stadiumImg from "../assets/images/stadium.jpg";
+
 export const landingData = {
   navLinks: [
     { label: "Home", href: "#home" },
@@ -15,18 +21,43 @@ export const landingData = {
     { icon: "🏟️", title: "Stadium Regulations", desc: "Stadium rules and forbidden items" },
   ],
   howItWorks: [
-    { step: 1, icon: "💬", title: "User Query", desc: "Ask a question" },
-    { step: 2, icon: "🔍", title: "Knowledge Retrieval", desc: "Searching knowledge docs" },
-    { step: 3, icon: "📄", title: "Context Augmentation", desc: "Combining query and docs" },
-    { step: 4, icon: "🧠", title: "Response Generation", desc: "LLM generates answer" },
-    { step: 5, icon: "✅", title: "Final Answer", desc: "Delivered to Bobotoh" },
+    {
+      step: "01",
+      icon: "💬",
+      title: "Ask a Question",
+      desc: "Ask about tickets, match schedules, memberships, merchandise, or stadium regulations."
+    },
+    {
+      step: "02",
+      icon: "🔍",
+      title: "Search Knowledge",
+      desc: "The system retrieves relevant information from official Persib knowledge sources."
+    },
+    {
+      step: "03",
+      icon: "📚",
+      title: "Build Context",
+      desc: "Relevant documents and user questions are combined into a structured context."
+    },
+    {
+      step: "04",
+      icon: "🧠",
+      title: "Generate Response",
+      desc: "The AI generates a clear and accurate answer based on retrieved information."
+    },
+    {
+      step: "05",
+      icon: "✅",
+      title: "Deliver Answer",
+      desc: "Fans receive instant responses backed by trusted club information."
+    }
   ],
   useCases: [
-    { image: "ticketing.jpg", title: "Ticketing", desc: "How to buy" },
-    { image: "membership.jpg", title: "Membership", desc: "Benefits" },
-    { image: "schedule.jpg", title: "Match Schedule", desc: "Who is next" },
-    { image: "merch.jpg", title: "Merchandise", desc: "Limited editions" },
-    { image: "stadium.jpg", title: "Stadium Rules", desc: "Forbidden items" },
+    { image: ticketingImg, title: "Ticketing", desc: "How to buy" },
+    { image: membershipImg, title: "Membership", desc: "Benefits" },
+    { image: scheduleImg, title: "Match Schedule", desc: "Who is next" },
+    { image: merchImg, title: "Merchandise", desc: "Limited editions" },
+    { image: stadiumImg, title: "Stadium Rules", desc: "Forbidden items" },
   ],
   technologies: [
     { icon: "⚛️", title: "React" },
