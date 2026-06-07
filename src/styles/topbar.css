@@ -1,22 +1,47 @@
+/* =========================
+   TOPBAR
+========================= */
 .topbar {
-  height: 64px; /* Dikecilkan dari 80px */
+  height: 64px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding: 0 20px; /* Padding lebih sempit */
+  justify-content: space-between;
+  padding: 0 16px;
   background: #293fbb;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   flex-shrink: 0;
 }
+/* Left Side - Hamburger */
+.topbar-left {
+  display: none;
+}
 
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.hamburger-btn:active {
+  background: rgba(255,255,255,0.15);
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Right Side */
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 10px; /* Gap lebih rapat */
+  gap: 12px;
 }
-/* =====================
-   ICON BUTTON
-===================== */
+
+/* Icon Buttons */
 .topbar-icon {
   width: 36px;
   height: 36px;
@@ -24,7 +49,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.05);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,15 +60,13 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* =====================
-   PROFILE
-===================== */
+/* Profile */
 .profile-link {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 4px 10px;
-  border-radius: 10px;
+  gap: 12px;
+  padding: 6px 12px;
+  border-radius: 12px;
   color: white;
   text-decoration: none;
   transition: background 0.2s;
@@ -60,12 +83,12 @@
 }
 
 .user-name {
-  font-size: 13px; /* Sedikit lebih kecil agar lebih elegan */
+  font-size: 13.5px;
   font-weight: 600;
 }
 
 .user-role {
-  font-size: 9px; /* Lebih kecil agar tidak mendominasi */
+  font-size: 9px;
   color: #fbbf24;
   font-weight: 700;
   letter-spacing: 1px;
@@ -75,37 +98,18 @@
 .user-avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%; /* Membuat bulat */
-  overflow: hidden;   /* Memotong gambar agar tetap di dalam lingkaran */
-  border: 1px solid #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .avatar-image-topbar {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Agar foto tidak gepeng */
+  object-fit: cover;
 }
 
-.profile-link:hover .user-avatar {
-  transform: scale(1.05);
-}
-
-/* Hamburger Menu */
-.topbar-left {
-  display: none;
-  align-items: center;
-}
-
-.hamburger-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-  padding: 8px;
-  margin-right: 10px;
-}
-
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .topbar {
     padding: 0 16px;
@@ -113,5 +117,11 @@
   
   .topbar-left {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0 12px;
   }
 }

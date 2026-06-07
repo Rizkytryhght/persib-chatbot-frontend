@@ -8,20 +8,23 @@ function DashboardLayout({ children }) {
 
   return (
     <div className="dashboard-layout">
-      {/* Sidebar dengan mobile control */}
-      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      <Sidebar 
+        isOpen={isSidebarOpen} 
+        setIsOpen={setIsSidebarOpen} 
+      />
 
       <div className="dashboard-content">
-        <Topbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+        <Topbar toggleSidebar={() => setIsSidebarOpen(prev => !prev)} />
+        
         <main className="dashboard-main">
           {children}
         </main>
       </div>
 
-      {/* Overlay untuk mobile */}
+      {/* Overlay */}
       {isSidebarOpen && (
         <div 
-          className="sidebar-overlay"
+          className="sidebar-overlay" 
           onClick={() => setIsSidebarOpen(false)}
         />
       )}

@@ -1,17 +1,14 @@
-import "../../styles/topbar.css";
-import userData from "../../data/userData";
 import { Link } from "react-router-dom";
-import profileImage from "../../assets/images/fotoDefault.jpg"
+import profileImage from "../../assets/images/fotoDefault.jpg";
+import userData from "../../data/userData";
 
 function Topbar({ toggleSidebar }) {
   return (
     <header className="topbar">
-      <div className="topbar-left">
-        <button className="hamburger-btn" onClick={toggleSidebar}>
-          ☰
-        </button>
-      </div>
-      
+      <button className="hamburger-btn" onClick={toggleSidebar}>
+        ☰
+      </button>
+
       <div className="topbar-right">
         <button className="topbar-icon">💬</button>
         <button className="topbar-icon">🛡️</button>
@@ -21,8 +18,6 @@ function Topbar({ toggleSidebar }) {
             <div className="user-name">{userData.name}</div>
             <div className="user-role">{userData.role}</div>
           </div>
-          
-          {/* 2. Ganti div user-avatar lama dengan tag img */}
           <div className="user-avatar">
             <img 
               src={profileImage} 

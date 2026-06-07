@@ -4,7 +4,7 @@
 .sidebar {
   width: 260px;
   min-width: 260px;
-  background: #0B1120; /* Lebih gelap menyesuaikan desain baru */
+  background: #0B1120;
   color: white;
   display: flex;
   flex-direction: column;
@@ -12,10 +12,27 @@
   padding: 24px;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Close Button (Mobile) */
+.sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 101;
+  padding: 4px;
 }
 
 /* =========================
-   BRAND LOGO
+   BRAND, BUTTON, MENU (sama seperti sebelumnya)
 ========================= */
 .sidebar-brand {
   display: flex;
@@ -28,15 +45,10 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: #0A1930; /* Biru sangat gelap */
+  background: #0A1930;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
 }
 
 .brand-text h2 {
@@ -49,19 +61,16 @@
 .brand-text span {
   font-size: 10px;
   letter-spacing: 2px;
-  color: #FBBF24; /* Emas cerah */
+  color: #FBBF24;
   font-weight: 600;
 }
 
-/* =========================
-   NEW CHAT BUTTON
-========================= */
 .new-chat-btn {
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: #0F4098; /* Biru solid, bukan gradient */
+  background: #0F4098;
   color: white;
   font-weight: 600;
   font-size: 14px;
@@ -71,16 +80,12 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: background 0.2s;
 }
 
 .new-chat-btn:hover {
   background: #1D4ED8;
 }
 
-/* =========================
-   MENU UTAMA
-========================= */
 .menu-title {
   font-size: 11px;
   font-weight: 700;
@@ -108,13 +113,11 @@
 }
 
 .menu-item.active {
-  background: #1E293B; /* Background abu gelap untuk status aktif */
+  background: #1E293B;
   border: 1px solid #334155;
 }
 
-/* =========================
-   FOOTER & SETTINGS TREE
-========================= */
+/* Settings & Footer */
 .sidebar-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 24px;
@@ -131,66 +134,51 @@
   cursor: pointer;
 }
 
-.settings-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Garis Pohon Hierarki (Tree Connector) */
 .submenu-list {
-  padding-left: 9px; /* Menyelaraskan dengan titik tengah ikon Settings */
+  padding-left: 9px;
   display: flex;
   flex-direction: column;
 }
 
 .submenu-item {
-  display: block;
   position: relative;
-  padding: 0 0 0 24px;
+  padding: 8px 0 8px 24px;
   color: #94A3B8;
   font-size: 13px;
   text-decoration: none;
-  transition: color 0.2s;
 }
 
 .submenu-item:hover {
   color: white;
 }
 
-/* Trik membuat garis melengkung L-shape ke setiap item */
 .submenu-item::before {
   content: "";
   position: absolute;
   left: 0;
-  top: -12px;     /* Menarik garis ke atas menyambung item sebelumnya */
-  bottom: 50%;    /* Garis vertikal berhenti di tengah-tengah item ini */
-  width: 14px;    /* Panjang garis horizontal */
+  top: -8px;
+  bottom: 50%;
+  width: 14px;
   border-left: 1px solid #475569;
   border-bottom: 1px solid #475569;
-  border-bottom-left-radius: 6px; /* Lengkungan garis */
+  border-bottom-left-radius: 6px;
 }
 
-/* Mengatur titik awal sambungan garis untuk item paling pertama */
 .submenu-item:first-child::before {
-  top: -6px; 
+  top: -4px;
 }
 
-/* =========================
-   LOGOUT BUTTON
-========================= */
 .logout-btn {
   margin-top: 32px;
   border: none;
   background: transparent;
-  color: #EF4444; /* Merah untuk bahaya/keluar */
+  color: #EF4444;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: 0.2s;
   padding-left: 4px;
 }
 
@@ -198,35 +186,36 @@
   opacity: 0.8;
 }
 
-/* =========================
-   ANIMASI CHEVRON SETTINGS
-========================= */
 .chevron-icon {
-  transition: transform 0.3s ease; /* Efek putar halus */
+  transition: transform 0.3s ease;
 }
 
-/* Saat menu terbuka, panah menghadap ke atas (opsional, tergantung selera) 
-   Atau dibiarkan menghadap ke bawah, lalu saat ditutup putar ke samping */
 .chevron-icon.closed {
-  transform: rotate(-90deg); /* Putar ke kiri saat menu ditutup */
+  transform: rotate(-90deg);
 }
 
-/* Mobile Sidebar */
-.sidebar-close-btn {
-  display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 101;
-}
-
+/* ==================== RESPONSIVE SIDEBAR ==================== */
 @media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
   .sidebar-close-btn {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 260px;
   }
 }
