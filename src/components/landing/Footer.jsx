@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="footer-logo">  
             <img src={persibLogo} alt="Persib Logo" className="footer-logo-img"/>
             <span>PERSIB</span></div>
-          <p className="social-text">Cleaned social media</p>
+          <p className="social-text">Media Social</p>
           <div className="social-icons">
             {SOCIAL_LINKS.map((link) => (
               <a

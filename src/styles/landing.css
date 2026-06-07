@@ -120,27 +120,41 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ==========================================================================
-   5. NAVBAR
+   5. NAVBAR (MASTER FIX)
    ========================================================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 5%;
+  padding: 20px 5%;
+  background-color: var(--bg-dark); 
   border-bottom: 1px solid var(--border-color);
+  position: relative; /* Kunci agar dropdown meluncur tepat dari bawah navbar */
+  z-index: 1000;
 }
 
 .navbar-logo {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  color: var(--text-main);
+  white-space: nowrap; /* KUNCI FIX: Mencegah teks melipat ke bawah */
+  z-index: 1001; 
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .navbar-links {
   display: flex;
   gap: 32px;
+  margin: 0 auto;
 }
 
 .navbar-links a {
@@ -149,7 +163,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   transition: color 0.2s;
 }
 
-.navbar-links a:hover { color: var(--text-main); }
+.navbar-links a:hover { 
+  color: var(--text-main); 
+}
 
 .navbar-actions {
   display: flex;
@@ -163,7 +179,27 @@ ul { list-style: none; padding: 0; margin: 0; }
   transition: color 0.2s;
 }
 
-.login-link:hover { color: var(--accent-gold); }
+.login-link:hover { 
+  color: var(--accent-gold); 
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001; /* Harus lebih tinggi dari dropdown agar bisa diklik tutup */
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-main);
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
 
 /* ==========================================================================
    6. HERO SECTION
@@ -171,14 +207,14 @@ ul { list-style: none; padding: 0; margin: 0; }
 .hero-section {
   display: flex;
   align-items: center;
-  padding: 80px 5%;
+  padding: 50px 5%;
   gap: 60px;
 }
 
 .hero-content { flex: 1; }
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3.5rem); /* Responsive typography */
+  font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.1;
   margin-bottom: 24px;
 }
@@ -336,10 +372,10 @@ ul { list-style: none; padding: 0; margin: 0; }
 .knowledge-flow {
   display: flex;
   align-items: center;
-  justify-content: center; /* Memastikan seluruh alur berada di tengah */
-  gap: 24px; /* Jarak antar elemen dan panah */
+  justify-content: center;
+  gap: 24px;
   margin: 2rem auto;
-  flex-wrap: wrap; /* Membantu jika layar mulai mengecil */
+  flex-wrap: wrap;
 }
 
 .flow-node {
@@ -347,15 +383,14 @@ ul { list-style: none; padding: 0; margin: 0; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 120px; /* Menjaga teks agar tetap rapi jika panjang */
+  max-width: 120px;
 }
 
 .flow-node .icon {
-  font-size: 2.5rem; /* Ukuran ikon dipertegas */
+  font-size: 2.5rem;
   margin-bottom: 12px;
 }
 
-/* Jika Anda menggunakan tag p atau span untuk teks di bawah ikon */
 .flow-node p, 
 .flow-node span {
   font-size: 0.95rem;
@@ -372,6 +407,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   align-items: center;
   justify-content: center;
 }
+
 /* ==========================================================================
    9. PROCESS FLOW (HOW IT WORKS)
    ========================================================================== */
@@ -412,7 +448,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .process-line {
   flex: 1;
   height: 2px;
-  margin-top: 21px; /* Align with step-number */
+  margin-top: 21px;
   background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.5), rgba(255,255,255,0.05));
 }
 
@@ -485,7 +521,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .technology-section {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Pastikan seluruh konten di tengah */
+  align-items: center;
   justify-content: center;
   height: 100%;
   text-align: center;
@@ -495,13 +531,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 32px 48px; /* Jarak vertikal 32px, horizontal 48px */
+  gap: 32px 48px;
   margin-top: 40px;
   flex-wrap: wrap;
-  
-  /* TRIK RAHASIA: 
-     Membatasi lebar maksimal container agar item ke-4 dan ke-5 
-     dipaksa turun ke baris baru, menciptakan formasi 3-2 yang rapi */
   max-width: 480px; 
   margin-left: auto;
   margin-right: auto;
@@ -509,7 +541,6 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .tech-item { 
   text-align: center;
-  /* Menyamakan lebar setiap box agar grid bayangan tetap seimbang */
   width: 100px; 
   display: flex;
   flex-direction: column;
@@ -518,23 +549,22 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .tech-item:hover {
-  transform: translateY(-5px); /* Tambahan efek hover agar lebih interaktif */
+  transform: translateY(-5px);
 }
 
-/* Dukungan jika menggunakan tag <img> atau icon bawaan */
 .tech-item img,
 .tech-icon { 
   width: 64px;
   height: 64px;
   object-fit: contain;
-  font-size: 3rem; /* Berlaku jika icon menggunakan font/emoji */
+  font-size: 3rem;
   margin-bottom: 16px;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2)); /* Memberi efek kedalaman */
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
 }
 
 .tech-label { 
   font-size: 0.95rem; 
-  color: var(--text-main); /* Menggunakan warna utama agar kontrasnya lebih baik dari sebelumnya */
+  color: var(--text-main);
   font-weight: 600; 
   line-height: 1.3;
 }
@@ -627,7 +657,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   .hero-section {
     flex-direction: column;
     text-align: center;
-    padding: 60px 5%;
+    padding: 30px 5%;
   }
 
   .hero-description {
@@ -654,18 +684,86 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* MOBILE (Max 768px) */
 @media (max-width: 768px) {
+  /* === NAVBAR MOBILE FIX === */
   .navbar {
-    flex-direction: column;
-    gap: 20px;
     padding: 20px 5%;
   }
 
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+  .hamburger {
+    display: flex;
   }
 
+  /* Animasi ikon Hamburger menjadi "X" */
+  .hamburger.active .bar:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+  /* KUNCI FIX: Dropdown Menu Mobile */
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    padding: 0 5%;
+    border-bottom: 1px solid var(--border-color);
+    
+    /* State Tertutup (Sembunyi Total) */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none; /* Mencegah tombol di dalam menu terklik tanpa sengaja saat tertutup */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* State Terbuka */
+  .navbar-menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    padding-bottom: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* Efek bayangan elegan */
+  }
+
+  /* Susun Ulang Link Menjadi Vertikal */
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 12px 0;
+    width: 100%;
+  }
+
+  .navbar-links a {
+    font-size: 1.1rem;
+    display: block;
+    padding: 8px;
+  }
+
+  /* Susun Ulang Tombol Menjadi Vertikal */
+  .navbar-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color); /* Garis pemisah */
+  }
+
+  .login-link {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .navbar-actions button, 
+  .navbar-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* === KOMPONEN LAINNYA === */
   .hero-title {
     font-size: 2.2rem;
   }
@@ -681,7 +779,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   }
 
   .process-line {
-    display: none; /* Menyembunyikan garis penghubung di mobile karena tersusun vertikal */
+    display: none;
   }
 
   .process-step {
@@ -697,39 +795,77 @@ ul { list-style: none; padding: 0; margin: 0; }
     flex-direction: column;
   }
 
-  .footer-links-grid {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
-
   .cta-card {
     padding: 30px 20px;
   }
 
   .knowledge-flow {
-    flex-direction: column; /* Ubah alur menjadi vertikal di HP */
+    flex-direction: column; 
     gap: 16px;
   }
   
   .flow-arrow {
-    /* Trik Estetika: Putar panah kanan menjadi panah bawah di layar HP */
     transform: rotate(90deg);
     margin: 8px 0;
   }
 
   .tech-flex {
     gap: 24px;
-    max-width: 320px; /* Memaksa menjadi layout 2-2-1 di layar kecil */
+    max-width: 320px;
   }
   
   .tech-item {
     width: 90px;
+  }
+
+  .footer {
+    padding: 40px 5% 24px; 
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px; 
+  }
+
+  .footer-logo {
+    justify-content: flex-start;
+  }
+
+  .social-text {
+    text-align: left; 
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px 24px;
+    width: 100%;
+  }
+
+  .footer-column {
+    text-align: left; 
+    width: 100%;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left;
+    gap: 12px;
+    padding-top: 24px;
   }
 }
 
@@ -743,5 +879,10 @@ ul { list-style: none; padding: 0; margin: 0; }
   .btn {
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr; 
+    gap: 28px;
   }
 }
