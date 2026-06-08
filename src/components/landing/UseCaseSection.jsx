@@ -36,7 +36,6 @@ const UseCaseSection = () => {
           if (diff < -Math.floor(data.length / 2)) diff += data.length;
           if (diff > Math.floor(data.length / 2)) diff -= data.length;
 
-          // Menambahkan 5 Posisi: Tengah, Kiri 1, Kanan 1, Kiri 2, Kanan 2
           let stateClass = "use-card-hidden";
           if (diff === 0) stateClass = "use-card-active";
           else if (diff === -1) stateClass = "use-card-prev-1";
@@ -44,7 +43,6 @@ const UseCaseSection = () => {
           else if (diff === -2) stateClass = "use-card-prev-2";
           else if (diff === 2) stateClass = "use-card-next-2";
 
-          // Fallback teks yang lebih relevan dengan "Pencarian Informasi"
           const displayDesc = useCase.desc.length < 20 
             ? `Dapatkan info terbaru terkait ${useCase.title.toLowerCase()} secara instan hanya dengan bertanya ke bot.` 
             : useCase.desc;
@@ -62,7 +60,6 @@ const UseCaseSection = () => {
               <div className="use-case-content">
                 <h4 className="use-case-title">{useCase.title}</h4>
                 <p className="use-case-desc">{displayDesc}</p>
-                {/* Tombol diganti menyesuaikan konteks "Hanya Informasi" */}
                 <button className="use-case-btn">Tanya Info Ini</button>
               </div>
             </div>

@@ -30,42 +30,11 @@
   overflow-y: auto;
   padding: 24px;
 }
-
-/* =========================
-   TOPBAR
-========================= */
-.topbar {
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 16px;
-  background: #293fbb;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  flex-shrink: 0;
-}
-
-.topbar-left { display: none; }
-
-.hamburger-btn {
-  background: none; border: none; color: white;
-  font-size: 26px; cursor: pointer; padding: 8px;
-}
-
-.topbar-right { display: flex; align-items: center; gap: 12px; }
-
-.user-avatar.avatar-image-topbar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
 /* ==================== RESPONSIVE ==================== */
-/* Tablet */
 @media (max-width: 1024px) {
-  .topbar-left { display: flex; }
+  .topbar-left { 
+    display: flex; 
+  }
   
   .sidebar {
     position: fixed;
@@ -80,7 +49,8 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .dashboard-main { padding: 16px; }
+  .dashboard-main { 
+    padding: 16px; 
+  }
 }

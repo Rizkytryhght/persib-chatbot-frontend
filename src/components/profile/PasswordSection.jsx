@@ -1,4 +1,3 @@
-// components/profile/PasswordSection.jsx
 import Input from "../common/Input";
 
 function PasswordSection({ formData, onChange }) {
@@ -26,4 +25,5 @@ function PasswordSection({ formData, onChange }) {
     </div>
   );
 }
+
 export default PasswordSection;

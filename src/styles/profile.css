@@ -1,8 +1,10 @@
+/* ==========================================================================
+   DESKTOP DEFAULT STYLES PROFILE
+   ========================================================================== */
 .profile-page {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 /* ===================== TABS ===================== */
 .profile-tabs {
   margin-bottom: 32px;
@@ -198,27 +200,20 @@
   opacity: 0.9;
 }
 
-/* ==================== RESPONSIVE MATRIX ==================== */
-
-/* --------------------------------------------------------------------------
-   1. LAPTOP & TABLET HORIZONTAL (Max 1024px)
-   -------------------------------------------------------------------------- */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
   .profile-card {
-    padding: 28px; /* Mengurangi padding luar sedikit agar proporsional */
+    padding: 28px;
   }
 
   .profile-grid {
-    gap: 20px; /* Merapatkan jarak antar input box */
+    gap: 20px; 
   }
 }
 
-/* --------------------------------------------------------------------------
-   2. TABLET VERTICAL & MOBILE (Max 768px)
-   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .profile-grid {
-    grid-template-columns: 1fr; /* Tetap dipertahankan: 1 kolom vertikal */
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 
@@ -226,13 +221,11 @@
     padding: 20px 20px;
   }
 
-  /* PENTING: Mengubah area tombol agar memakan space penuh */
   .profile-actions {
     width: 100%;
     margin-top: 28px;
   }
 
-  /* Membuat tombol menjadi Full Width dan mudah di-tap jempol */
   .profile-update-btn {
     width: 100%;
     justify-content: center;
@@ -242,9 +235,6 @@
     font-size: 15px;
   }
 
-  /* -----------------------------------------------------------------------
-     BAGIAN TABS (TIDAK DIUBAH - SESUAI REQUEST ASLI ANDA)
-     ----------------------------------------------------------------------- */
   .tabs-scroll {
     gap: 24px;
   }
@@ -258,21 +248,18 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   3. SMALL MOBILE (Max 480px)
-   -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .profile-card {
-    padding: 20px 16px; /* Padding sisi kanan-kiri lebih tipis di hp kecil */
+    padding: 20px 16px; 
   }
 
   .profile-section h2 {
-    font-size: 16px; /* Mengecilkan judul section agar tidak makan tempat */
+    font-size: 16px;
     margin-bottom: 12px;
   }
 
   .avatar-wrapper {
-    width: 72px; /* Sedikit mengecilkan ukuran avatar agar compact */
+    width: 72px;
     height: 72px;
   }
 }

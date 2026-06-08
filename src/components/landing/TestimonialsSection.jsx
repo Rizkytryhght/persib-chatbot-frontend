@@ -5,7 +5,6 @@ const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const data = landingData.testimonials;
 
-  // Efek Auto-swipe setiap 5 detik
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % data.length);
@@ -28,9 +27,9 @@ const TestimonialsSection = () => {
           if (diff > Math.floor(data.length / 2)) diff -= data.length;
 
           let stateClass = 'card-hidden';
-          if (diff === 0) stateClass = 'card-active';       // Fokus Utama
-          else if (diff === -1) stateClass = 'card-prev';   // Kiri (Redup & Jauh)
-          else if (diff === 1) stateClass = 'card-next';    // Kanan (Redup & Jauh)
+          if (diff === 0) stateClass = 'card-active';       
+          else if (diff === -1) stateClass = 'card-prev';
+          else if (diff === 1) stateClass = 'card-next';
 
           return (
             <div key={index} className={`testimonial-card ${stateClass}`}>
@@ -52,7 +51,6 @@ const TestimonialsSection = () => {
         })}
       </div>
 
-      {/* Indikator Slide (Dots Pagination) - Improvement 9 */}
       <div className="carousel-dots">
         {data.map((_, index) => (
           <button

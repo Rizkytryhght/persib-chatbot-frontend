@@ -9,7 +9,6 @@ import Footer from '../components/landing/Footer';
 import heroBg2 from "../assets/images/hero-bg2.jpg";
 import '../styles/landing.css';
 
-
 const LandingPage = () => {
   return (
     <div className="landing-page">

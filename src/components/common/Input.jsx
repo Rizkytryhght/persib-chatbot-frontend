@@ -18,11 +18,7 @@ function Input({ label, type = "text", value, onChange, name, placeholder }) {
           placeholder={placeholder}
         />
         {type === "password" && (
-          <button
-            type="button"
-            className="toggle-password"
-            onClick={() => setShowPassword(!showPassword)}
-          >
+          <button type="button" className="toggle-password" onClick={() => setShowPassword(!showPassword)} >
             {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
           </button>
         )}

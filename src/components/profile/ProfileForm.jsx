@@ -21,20 +21,16 @@ function ProfileForm() {
   };
 
   const handleSave = () => {
-    // 1. Pengecekan pertama: Apakah ada kolom password yang masih kosong?
-    // .trim() digunakan untuk mencegah user curang dengan hanya menekan spasi
     if (!formData.password?.trim() || !formData.confirmPassword?.trim()) {
       alert("❌ Kolom Password dan Confirm Password wajib diisi!");
-      return; // Stop di sini, jangan lanjut simpan
+      return;
     }
 
-    // 2. Pengecekan kedua: Jika sudah diisi semua, apakah nilainya sama?
     if (formData.password !== formData.confirmPassword) {
       alert("❌ Password dan Confirm Password tidak cocok! Silakan periksa kembali.");
-      return; // Stop di sini
+      return;
     }
 
-    // Jika kedua pengecekan di atas lolos, baru data disimpan ke local storage
     localStorage.setItem("userProfile", JSON.stringify(formData));
     alert("✨ Profil berhasil disimpan di browser!");
   };
@@ -54,4 +50,5 @@ function ProfileForm() {
     </div>
   );
 }
+
 export default ProfileForm;

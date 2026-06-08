@@ -3,7 +3,6 @@ import DashboardLayout from "../components/layout/DashboardLayout";
 import ProfileTabs from "../components/profile/ProfileTabs";
 import ProfileForm from "../components/profile/ProfileForm";
 import EmptyTab from "../components/profile/EmptyTab";
-
 import "../styles/profile.css";
 
 function Profile() {

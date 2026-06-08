@@ -3,6 +3,10 @@ import membershipImg from "../assets/images/membership.jpg";
 import scheduleImg from "../assets/images/schedule.jpg";
 import merchImg from "../assets/images/merch.png";
 import stadiumImg from "../assets/images/stadium.jpg";
+import instagramIcon from "../assets/images/instagram2.jpg";
+import linkedinIcon from "../assets/images/linkedin.png";
+import youtubeIcon from "../assets/images/youtube2.jpg";
+import twitterIcon from "../assets/images/X2.jpg";
 
 export const landingData = {
   navLinks: [
@@ -58,5 +62,39 @@ export const landingData = {
       question: "Apakah saya perlu akun untuk menggunakan Maung Bot?", 
       answer: "Beberapa fitur umum bisa diakses tanpa akun, namun untuk bantuan tiket dan keanggotaan spesifik, disarankan untuk login." 
     },
+  ],
+  footerSocials: [
+    { href: "https://x.com/persib", icon: twitterIcon, label: "X / Twitter" },
+    { href: "https://www.instagram.com/persib/?hl=id", icon: instagramIcon, label: "Instagram" },
+    { href: "https://id.linkedin.com/company/persib", icon: linkedinIcon, label: "LinkedIn" },
+    { href: "https://www.youtube.com/channel/UCq9VjkTSRBvlyr0sSXwm8Kw", icon: youtubeIcon, label: "YouTube" },
+  ],
+  footerLinks: [
+    {
+      title: "Produk",
+      items: [
+        { label: "Fitur Utama", href: "#" },
+        { label: "AI Legends", href: "#" },
+        { label: "Tiket VIP", href: "#" },
+        { label: "Merchandise", href: "#" },
+      ]
+    },
+    {
+      title: "Perusahaan",
+      items: [
+        { label: "Tentang Kami", href: "#" },
+        { label: "Karier", href: "#" },
+        { label: "Kontak", href: "#" },
+        { label: "Press Kit", href: "#" },
+      ]
+    },
+    {
+      title: "Legal",
+      items: [
+        { label: "Privasi", href: "#" },
+        { label: "Ketentuan", href: "#" },
+        { label: "Keamanan", href: "#" },
+      ]
+    }
   ]
 };

@@ -7,11 +7,7 @@ function Button({
   className = "",
 }) {
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      className={`app-button ${className}`}
-    >
+    <button type={type} onClick={onClick} className={`app-button ${className}`} >
       {children}
     </button>
   );

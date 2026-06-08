@@ -12,7 +12,6 @@ function Card({
           {title}
         </h2>
       )}
-
       {children}
     </div>
   );

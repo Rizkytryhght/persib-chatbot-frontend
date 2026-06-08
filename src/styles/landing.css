@@ -26,7 +26,6 @@ body {
 h1, h2, h3, h4 { margin: 0; font-weight: 600; }
 a { color: var(--text-main); text-decoration: none; }
 ul { list-style: none; padding: 0; margin: 0; }
-
 /* ==========================================================================
    2. LAYOUT & CONTAINERS
    ========================================================================== */
@@ -39,10 +38,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0; /* Diatur spesifik di tiap section agar responsif */
+  padding: 0;
 }
 
-/* Master Grid Layout */
 .landing-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -56,14 +54,12 @@ ul { list-style: none; padding: 0; margin: 0; }
   grid-column: 1 / -1;
 }
 
-/* KUNCI FIX: Mencegah konten section tertutup navbar setelah di-scroll */
 #home,
 #features, 
 #review, 
 #faq {
   scroll-margin-top: 80px; 
 }
-
 /* ==========================================================================
    3. TYPOGRAPHY & UTILITIES
    ========================================================================== */
@@ -87,7 +83,6 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .text-center { text-align: center; }
-
 /* ==========================================================================
    4. BUTTONS & COMPONENTS
    ========================================================================== */
@@ -129,9 +124,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-radius: 12px;
   padding: 20px;
 }
-
 /* ==========================================================================
-   5. NAVBAR (MASTER FIX)
+   5. NAVBAR
    ========================================================================== */
 .navbar {
   display: flex;
@@ -140,11 +134,11 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 20px 5%;
   background-color: var(--bg-dark); 
   border-bottom: 1px solid var(--border-color);
-  position: fixed; /* Kunci agar dropdown meluncur tepat dari bawah navbar */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box; /* KUNCI: Mencegah padding merusak lebar lebar layar (100%) */
+  box-sizing: border-box;
   z-index: 1000;
 }
 
@@ -155,7 +149,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   align-items: center;
   gap: 12px;
   color: var(--text-main);
-  white-space: nowrap; /* KUNCI FIX: Mencegah teks melipat ke bawah */
+  white-space: nowrap; 
   z-index: 1001; 
 }
 
@@ -205,7 +199,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   width: 28px;
   height: 20px;
   cursor: pointer;
-  z-index: 1001; /* Harus lebih tinggi dari dropdown agar bisa diklik tutup */
+  z-index: 1001; 
 }
 
 .hamburger .bar {
@@ -215,7 +209,6 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
 }
-
 /* ==========================================================================
    6. HERO SECTION
    ========================================================================== */
@@ -226,7 +219,6 @@ ul { list-style: none; padding: 0; margin: 0; }
   gap: 60px;
 }
 
-/* Container utama untuk membatasi lebar konten */
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -239,7 +231,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .hero-content {
   flex: 1;
-  text-align: left; /* Rata Kiri */
+  text-align: left;
 }
 
 .hero-title {
@@ -288,17 +280,30 @@ ul { list-style: none; padding: 0; margin: 0; }
   background: rgba(255,255,255,0.02);
 }
 
-.bot-avatar { font-size: 1.5rem; margin-right: 12px; }
+.bot-avatar { 
+  font-size: 1.5rem; 
+  margin-right: 12px; 
+}
+
 .bot-info h4 { 
   font-size: 0.9rem; 
   margin-bottom: 4px;
   text-align: left; 
 }
 .bot-info p { 
-  font-size: 0.75rem; color: var(--text-muted); margin: 0; 
-  display: flex; align-items: center; gap: 6px; 
+  font-size: 0.75rem; 
+  color: var(--text-muted); 
+  margin: 0; 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
 }
-.status-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; }
+.status-dot { 
+  width: 6px; 
+  height: 6px; 
+  background: #10B981; 
+  border-radius: 50%; 
+}
 
 .chat-body {
   padding: 24px 16px;
@@ -380,7 +385,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   justify-content: center;
 }
 /* ==========================================================================
-   9. Testimonials (Refined Carousel)
+   9. Testimonials
    ========================================================================== */
 .testimonials-section {
   padding: 50px 5%;
@@ -388,7 +393,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   display: flex;
   flex-direction: column;
   align-items: center; 
-  position: relative; /* tambah ini */
+  position: relative;
 }
 
 .testimonials-section::before {
@@ -413,36 +418,30 @@ ul { list-style: none; padding: 0; margin: 0; }
   position: relative;
   width: 100%;
   max-width: 1200px;
-  height: 360px; /* 1. Diperkecil (sebelumnya 420px) agar proporsional dengan card baru */
+  height: 360px;
   margin: 0 auto 30px auto;
   display: flex;
   justify-content: center;
   align-items: flex-end; 
 }
 
-/* Base Card Styling */
 .testimonial-card {
   position: absolute;
   width: 90%;
-  max-width: 380px;  /* 1. Diperkecil (sebelumnya 420px) */
-  height: 290px;     /* 1. Diperkecil (sebelumnya 320px) */
-  
-  /* 4. Dibuat sedikit transparan dengan efek glassmorphism */
-  background: rgba(17, 24, 39, 0.55); /* Opasitas diturunkan dari 0.85 ke 0.55 */
-  backdrop-filter: blur(12px); /* Menjaga teks tetap terbaca meski background transparan */
-  
+  max-width: 380px;
+  height: 290px;
+  background: rgba(17, 24, 39, 0.55); 
+  backdrop-filter: blur(12px); 
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 28px 28px 20px 28px; /* Padding disesuaikan dengan ukuran baru */
+  padding: 28px 28px 20px 28px;
   display: flex;
   flex-direction: column;
-  
   transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity, filter;
   transform-origin: bottom center; 
 }
 
-/* POSISI 1: CARD TENGAH */
 .card-active {
   transform: translateX(0) scale(1);
   opacity: 1;
@@ -452,21 +451,17 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-color: rgba(255, 255, 255, 0.15); 
 }
 
-/* POSISI 2: CARD KIRI */
 .card-prev {
-  transform: translateX(-70%) scale(0.8); /* Scale disesuaikan */
-  opacity: 0.45; /* Sedikit lebih terang agar tidak terlalu mati */
-  /* 3. Blur dikurangi drastis agar tidak terlihat seperti noda */
+  transform: translateX(-70%) scale(0.8);
+  opacity: 0.45;
   filter: blur(1.5px) brightness(0.7); 
   z-index: 5;
   pointer-events: none; 
 }
 
-/* POSISI 3: CARD KANAN */
 .card-next {
   transform: translateX(70%) scale(0.8); 
   opacity: 0.45;
-  /* 3. Blur dikurangi drastis */
   filter: blur(1.5px) brightness(0.7); 
   z-index: 5;
   pointer-events: none;
@@ -479,9 +474,8 @@ ul { list-style: none; padding: 0; margin: 0; }
   pointer-events: none; 
 }
 
-/* TEKS KONTEN */
 .quote-mark {
-  font-size: 2.5rem; /* Disesuaikan dengan card yang lebih kecil */
+  font-size: 2.5rem;
   color: rgba(255, 255, 255, 0.15);
   margin-top: -10px;
   margin-bottom: 5px;
@@ -490,16 +484,13 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .testimonial-text {
-  font-size: 0.95rem; /* Disesuaikan */
+  font-size: 0.95rem;
   line-height: 1.6;
   color: #c9d1d9;
   text-align: left;
   margin-bottom: auto;
-  
-  /* 2. Style font deskripsi dibuat italic */
   font-style: italic; 
   display: -webkit-box;
-  /* -webkit-line-clamp: 4;  */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -549,9 +540,12 @@ ul { list-style: none; padding: 0; margin: 0; }
   text-align: left; 
 }
 
-.rating { color: #f1c40f; font-size: 0.75rem; letter-spacing: 2px;}
+.rating { 
+  color: #f1c40f; 
+  font-size: 0.75rem; 
+  letter-spacing: 2px;
+}
 
-/* Dots Pagination */
 .carousel-dots {
   display: flex;
   gap: 12px;
@@ -576,7 +570,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-radius: 10px;
 }
 /* ==========================================================================
-   11. USE CASE SECTION (5-Card Coverflow)
+   11. USE CASE SECTION
    ========================================================================== */
 .use-case-section {
   padding: 40px 5%;
@@ -590,19 +584,18 @@ ul { list-style: none; padding: 0; margin: 0; }
   position: relative;
   width: 100%;
   max-width: 1200px;
-  height: 520px; /* Ditinggikan sedikit untuk mengakomodasi card yang lebih tinggi */
+  height: 520px;
   margin: 0 auto 30px auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Card Dibuat Lebih Kurus (Portrait) & Lebih Tinggi */
 .use-case-card {
   position: absolute;
   width: 90%;
-  max-width: 290px; /* Dipersempit dari 340px */
-  height: 460px;    /* Ditinggikan dari 420px */
+  max-width: 290px; 
+  height: 460px; 
   background: rgba(17, 24, 39, 0.7); 
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -610,12 +603,10 @@ ul { list-style: none; padding: 0; margin: 0; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  
   transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity, filter;
 }
 
-/* POSISI 1: TENGAH FOKUS */
 .use-card-active {
   transform: translateX(0) scale(1);
   opacity: 1;
@@ -625,7 +616,6 @@ ul { list-style: none; padding: 0; margin: 0; }
   border-color: rgba(255, 255, 255, 0.2); 
 }
 
-/* POSISI 2: KIRI & KANAN PERTAMA (Agak Mundur) */
 .use-card-prev-1 {
   transform: translateX(-65%) scale(0.85); 
   opacity: 0.6; 
@@ -641,23 +631,21 @@ ul { list-style: none; padding: 0; margin: 0; }
   pointer-events: none;
 }
 
-/* POSISI 3: KIRI & KANAN KEDUA (Mundur Paling Jauh) */
 .use-card-prev-2 {
-  transform: translateX(-115%) scale(0.7); /* Geser jauh ke kiri & lebih kecil */
-  opacity: 0.25; /* Sangat redup */
+  transform: translateX(-115%) scale(0.7); 
+  opacity: 0.25;
   filter: blur(3px) brightness(0.4); 
   z-index: 2;
   pointer-events: none; 
 }
 .use-card-next-2 {
-  transform: translateX(115%) scale(0.7); /* Geser jauh ke kanan & lebih kecil */
+  transform: translateX(115%) scale(0.7); 
   opacity: 0.25; 
   filter: blur(3px) brightness(0.4); 
   z-index: 2;
   pointer-events: none;
 }
 
-/* Disembunyikan jika datanya lebih dari 5 */
 .use-card-hidden {
   transform: translateX(0) scale(0.5);
   opacity: 0;
@@ -665,10 +653,9 @@ ul { list-style: none; padding: 0; margin: 0; }
   pointer-events: none; 
 }
 
-/* KONTEN GAMBAR & TEKS */
 .use-case-image-wrapper {
   width: 100%;
-  height: 220px; /* Ditinggikan agar seimbang dengan card yang tinggi */
+  height: 220px; 
   overflow: hidden;
   position: relative;
 }
@@ -685,7 +672,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .use-case-content {
-  padding: 24px 20px; /* Padding samping sedikit dikurangi karena card kurus */
+  padding: 24px 20px; 
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -701,17 +688,15 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .use-case-desc {
-  font-size: 0.85rem; /* Dikecilkan sedikit agar muat di card kurus */
+  font-size: 0.85rem;
   line-height: 1.5;
   color: #a3b3c5;
   margin-bottom: auto;
-  
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Tombol Info */
 .use-case-btn {
   margin-top: 16px;
   padding: 10px 0;
@@ -738,13 +723,29 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 50px 0 80px 0 ;
 }
 
-.accordion { border-top: 1px solid var(--border-color); margin-top: 24px; }
-.accordion-item { border-bottom: 1px solid var(--border-color); }
-.accordion-header {
-  width: 100%; text-align: left; background: none; border: none;
-  color: var(--text-main); padding: 20px 0; font-size: 0.95rem;
-  display: flex; justify-content: space-between; cursor: pointer; font-weight: 600;
+.accordion { 
+  border-top: 1px solid var(--border-color); 
+  margin-top: 24px; 
 }
+
+.accordion-item { 
+  border-bottom: 1px solid var(--border-color); 
+}
+
+.accordion-header {
+  width: 100%; 
+  text-align: left; 
+  background: none; 
+  border: none;
+  color: var(--text-main); 
+  padding: 20px 0; 
+  font-size: 0.95rem;
+  display: flex; 
+  justify-content: space-between; 
+  cursor: pointer; 
+  font-weight: 600;
+}
+
 .accordion-body { 
   padding-bottom: 20px; 
   font-size: 0.85rem; 
@@ -755,15 +756,14 @@ ul { list-style: none; padding: 0; margin: 0; }
 .accordion-body p{
   text-align: left;
 }
-
 /* ==========================================================================
-   13. CTA SECTION (HIGH FIDELITY FIX)
+   13. CTA SECTION
    ========================================================================== */
 .cta-section { 
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  padding: 80px 0; /* Memberikan jarak vertikal antar section */
+  padding: 80px 0;
   width: 100%; 
 }
 
@@ -772,8 +772,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   border: 1px solid rgba(251, 191, 36, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  
-  border-radius: 16px; /* Sudut lebih melengkung modern */
+  border-radius: 16px; 
   padding: 60px 40px;
   text-align: center;
   width: 100%;
@@ -792,13 +791,12 @@ ul { list-style: none; padding: 0; margin: 0; }
   font-size: 1rem; 
   color: var(--text-muted, #94a3b8); 
   line-height: 1.6;
-  max-width: 680px; /* KUNCI: Membatasi lebar teks agar rapi di tengah */
+  max-width: 680px;
   margin: 0 auto 32px auto; 
 }
 
-/* KUNCI UTAMA: Membuat tombol ungu menyala khas asisten AI */
 .cta-card .cta-btn {
-  background: #7c3aed; /* Warna Ungu Violet */
+  background: #7c3aed;
   color: #ffffff;
   padding: 14px 36px;
   font-size: 1rem;
@@ -807,14 +805,13 @@ ul { list-style: none; padding: 0; margin: 0; }
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  /* Efek pendaran lampu/glow di bawah tombol */
   box-shadow: 0 4px 25px rgba(124, 58, 237, 0.5); 
 }
 
 .cta-card .cta-btn:hover {
   background: #6d28d9;
   box-shadow: 0 4px 35px rgba(124, 58, 237, 0.7);
-  transform: translateY(-2px); /* Efek sedikit terangkat saat di-hover */
+  transform: translateY(-2px);
 }
 
 .cta-card .cta-btn:active {
@@ -830,44 +827,94 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .footer-content { 
-  display: flex; justify-content: space-between; 
-  margin: 0 auto 60px; max-width: 1440px; gap: 40px;
+  display: flex; 
+  justify-content: space-between; 
+  margin: 0 auto 60px; 
+  max-width: 1440px; 
+  gap: 40px;
 }
 
 .footer-logo {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 18px; font-weight: 700; margin-bottom: 16px;
+  display: flex; 
+  align-items: center; 
+  gap: 12px;
+  font-size: 18px; 
+  font-weight: 700; 
+  margin-bottom: 16px;
 }
 
-.footer-logo-img { width: 36px; height: 36px; object-fit: contain; }
-.social-text { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; max-width: 300px; line-height: 1.5;}
-.social-icons { display: flex; gap: 16px; margin-top: 12px; }
+.footer-logo-img { 
+  width: 36px; 
+  height: 36px; 
+  object-fit: contain; 
+}
+
+.social-text { 
+  color: var(--text-muted); 
+  font-size: 0.85rem; 
+  margin-bottom: 16px; 
+  max-width: 300px; 
+  line-height: 1.5;
+}
+
+.social-icons { 
+  display: flex; 
+  gap: 16px; 
+  margin-top: 12px; 
+}
 
 .social-icon {
-  width: 20px; height: 20px; object-fit: contain; cursor: pointer; transition: 0.2s ease;
+  width: 20px; 
+  height: 20px; 
+  object-fit: contain; 
+  cursor: pointer; 
+  transition: 0.2s ease;
 }
-.social-icon:hover { transform: translateY(-2px); }
 
-.footer-links-grid { display: flex; gap: 80px; flex-wrap: wrap;}
-.footer-column h4 { margin-bottom: 20px; font-size: 1rem; color: var(--text-main); }
-.footer-column a { 
-  display: block; color: var(--text-muted); margin-bottom: 12px; 
-  font-size: 0.85rem; transition: color 0.2s;
+.social-icon:hover { 
+  transform: translateY(-2px); 
 }
-.footer-column a:hover { color: var(--accent-gold); }
+
+.footer-links-grid { 
+  display: flex; 
+  gap: 80px; 
+  flex-wrap: wrap;
+}
+
+.footer-column h4 { 
+  margin-bottom: 20px; 
+  font-size: 1rem; 
+  color: var(--text-main); 
+}
+
+.footer-column a { 
+  display: block; 
+  color: var(--text-muted); 
+  margin-bottom: 12px; 
+  font-size: 0.85rem; 
+  transition: color 0.2s;
+}
+
+.footer-column a:hover { 
+  color: var(--accent-gold); 
+}
 
 .footer-bottom {
-  max-width: 1440px; margin: 0 auto;
+  max-width: 1440px; 
+  margin: 0 auto;
   border-top: 1px solid var(--border-color);
-  padding-top: 20px; display: flex; justify-content: space-between;
-  color: var(--text-muted); font-size: 0.8rem; align-items: center; flex-wrap: wrap; gap: 16px;
+  padding-top: 20px; 
+  display: flex; 
+  justify-content: space-between;
+  color: var(--text-muted); 
+  font-size: 0.8rem; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 16px;
 }
-
 /* ==========================================================================
-   15. EXTREME RESPONSIVE MATRIX (MEDIA QUERIES)
+      RESPONSIVE
    ========================================================================== */
-
-/* TABLET (Max 1024px) */
 @media (max-width: 1024px) {
   .landing-grid {
     grid-template-columns: 1fr;
@@ -907,9 +954,7 @@ ul { list-style: none; padding: 0; margin: 0; }
   }
 }
 
-/* MOBILE (Max 768px) */
 @media (max-width: 768px) {
-  /* === NAVBAR MOBILE FIX === */
   .navbar {
     padding: 20px 5%;
   }
@@ -918,9 +963,15 @@ ul { list-style: none; padding: 0; margin: 0; }
     display: flex;
   }
 
-  .hamburger.active .bar:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
-  .hamburger.active .bar:nth-child(2) { opacity: 0; }
-  .hamburger.active .bar:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+  .hamburger.active .bar:nth-child(1) { 
+    transform: translateY(8.5px) rotate(45deg); 
+  }
+  .hamburger.active .bar:nth-child(2) { 
+    opacity: 0; 
+  }
+  .hamburger.active .bar:nth-child(3) { 
+    transform: translateY(-8.5px) rotate(-45deg); 
+  }
 
   .navbar-menu {
     position: absolute;
@@ -981,7 +1032,6 @@ ul { list-style: none; padding: 0; margin: 0; }
     justify-content: center;
   }
 
-  /* === KOMPONEN LAINNYA === */
   .hero-title {
     font-size: 2.2rem;
   }
@@ -1013,7 +1063,6 @@ ul { list-style: none; padding: 0; margin: 0; }
     padding: 30px 20px;
   }
 
-  /* FEATURES SECTION: 2 Kolom Padat di Mobile */
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -1105,17 +1154,46 @@ ul { list-style: none; padding: 0; margin: 0; }
     justify-content: center;
   }
   
-  .testimonials-carousel { height: 320px; }
-  .testimonial-card { height: 260px; padding: 20px; max-width: 85%; }
-  .card-prev { transform: translateX(-35%) scale(0.85); opacity: 0.3; }
-  .card-next { transform: translateX(35%) scale(0.85); opacity: 0.3; }
+  .testimonials-carousel { 
+    height: 320px; 
+  }
 
-  .use-case-carousel { height: 460px; }
-  .use-case-card { height: 400px; max-width: 75%; }
-  .use-case-image-wrapper { height: 180px; }
+  .testimonial-card { 
+    height: 260px; 
+    padding: 20px; 
+    max-width: 85%; 
+  }
+
+  .card-prev { 
+    transform: translateX(-35%) scale(0.85); opacity: 0.3; 
+  }
+
+  .card-next { 
+    transform: translateX(35%) scale(0.85); opacity: 0.3; 
+  }
+
+  .use-case-carousel { 
+    height: 460px; 
+  }
+
+  .use-case-card { 
+    height: 400px; 
+    max-width: 75%; 
+  }
+
+  .use-case-image-wrapper { 
+    height: 180px; 
+  }
   
-  .use-card-prev-1 { transform: translateX(-40%) scale(0.85); opacity: 0.4; }
-  .use-card-next-1 { transform: translateX(40%) scale(0.85); opacity: 0.4; }
+  .use-card-prev-1 { 
+    transform: translateX(-40%) scale(0.85); 
+    opacity: 0.4; 
+  }
+
+  .use-card-next-1 { 
+    transform: translateX(40%) scale(0.85); 
+    opacity: 0.4; 
+  }
   
   .use-card-prev-2, .use-card-next-2 { 
     opacity: 0; 
@@ -1123,7 +1201,6 @@ ul { list-style: none; padding: 0; margin: 0; }
   }
 }
 
-/* SMALL MOBILE (Max 480px) */
 @media (max-width: 480px) {
   .hero-buttons {
     flex-direction: column;

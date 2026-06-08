@@ -5,7 +5,7 @@ import heroBg from "../../assets/images/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <section className="hero-section" style={{ backgroundImage: `linear-gradient(rgba(0,20,60,0.75),rgba(0,10,40,0.85)),url(${heroBg})` }}>
-      <div className="hero-container"> {/* Wrapper baru untuk kontrol layout */}
+      <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
             Jawaban Cepat untuk Bobotoh, Kapan Pun Di Mana Pun.
