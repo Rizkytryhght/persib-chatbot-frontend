@@ -1,19 +1,19 @@
-/* =========================
-   TOPBAR
-========================= */
+/* ==========================================================================
+   BASE DESKTOP STYLES
+   ========================================================================== */
 .topbar {
   height: 64px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0 16px;
+  justify-content: space-between;
+  padding: 0 24px; /* Default desktop padding lebih luas */
   background: #293fbb;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   flex-shrink: 0;
 }
 
 .topbar-left {
-  display: none;
+  display: none; /* Tersembunyi di desktop karena sidebar selalu terlihat */
 }
 
 .hamburger-btn {
@@ -24,6 +24,9 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger-btn:active {
@@ -92,6 +95,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
 .user-avatar {
   width: 40px;
   height: 40px;
@@ -113,19 +117,75 @@
   display: block;
 }
 
-/* ==================== RESPONSIVE ==================== */
-  @media (max-width: 1024px) {
-    .topbar {
-      padding: 0 16px;
-    }
-    
-    .topbar-left {
-      display: flex;
-    }
+
+/* ==========================================================================
+   ULTIMATE RESPONSIVE MATRIX FOR TOPBAR
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & TABLET HORIZONTAL (Max 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .topbar {
+    padding: 0 16px;
+  }
+  
+  /* Memunculkan pembungkus tombol hamburger karena sidebar mulai bersembunyi */
+  .topbar-left {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET VERTICAL (Max 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Sedikit merapatkan jarak antar ikon kanan agar tidak memakan space */
+  .topbar-right {
+    gap: 8px;
   }
 
-  @media (max-width: 480px) {
-    .topbar {
-      padding: 0 12px;
-    }
+  .profile-link {
+    padding: 6px 8px;
+    gap: 8px;
   }
+
+  /* Mengecilkan ukuran teks nama di tablet agar proporsional */
+  .user-name {
+    font-size: 12.5px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL MOBILE (Max 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0 12px;
+  }
+
+  /* STRATEGI KUNCI: Sembunyikan teks nama & role di HP kecil. 
+     Hanya menyisakan foto avatar saja agar tidak tabrakan dengan ikon chat/shield */
+  .user-info {
+    display: none;
+  }
+
+  .profile-link {
+    padding: 4px;
+    gap: 0; /* Menghilangkan gap karena komponen teks di kiri avatar sudah hilang */
+  }
+
+  .topbar-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+}

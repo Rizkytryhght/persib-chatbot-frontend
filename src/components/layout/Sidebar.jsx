@@ -10,7 +10,7 @@ function Sidebar({ isOpen, setIsOpen }) {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-top">
         
         {/* === BRAND === */}
