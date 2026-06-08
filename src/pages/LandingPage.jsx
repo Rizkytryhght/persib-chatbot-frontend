@@ -17,8 +17,8 @@ const LandingPage = () => {
         <Navbar />
         <HeroSection />
         <div className="landing-grid" style={{backgroundImage: `linear-gradient(rgba(0,20,60,0.75),rgba(0,10,40,0.85)),url(${heroBg2})`}}>
-          <div className="grid-full" id="features"><UseCaseSection /></div>     
-          <div className="grid-full"><CTASection /></div>
+          <div className="grid-full" id="home"><UseCaseSection /></div>     
+          <div className="grid-full" id="features"><CTASection /></div>
           <div className="grid-full" id="review"><TestimonialsSection /></div>
           <div className="grid-full" id="faq"><FAQSection /></div>
         </div>

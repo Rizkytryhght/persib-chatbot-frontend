@@ -11,7 +11,9 @@
   --text-muted: #9CA3AF;
   --font-family: 'Inter', -apple-system, sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   background-color: var(--bg-dark);
@@ -31,6 +33,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .landing-page {
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 80px;
 }
 
 .container {
@@ -51,6 +54,14 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 .grid-full {
   grid-column: 1 / -1;
+}
+
+/* KUNCI FIX: Mencegah konten section tertutup navbar setelah di-scroll */
+#home,
+#features, 
+#review, 
+#faq {
+  scroll-margin-top: 100px; 
 }
 
 /* ==========================================================================
@@ -129,7 +140,11 @@ ul { list-style: none; padding: 0; margin: 0; }
   padding: 20px 5%;
   background-color: var(--bg-dark); 
   border-bottom: 1px solid var(--border-color);
-  position: relative; /* Kunci agar dropdown meluncur tepat dari bawah navbar */
+  position: fixed; /* Kunci agar dropdown meluncur tepat dari bawah navbar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* KUNCI: Mencegah padding merusak lebar lebar layar (100%) */
   z-index: 1000;
 }
 
@@ -738,22 +753,69 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* ==========================================================================
-   13. CTA SECTION
+   13. CTA SECTION (HIGH FIDELITY FIX)
    ========================================================================== */
-.cta-section { display: flex; align-items: center; justify-content: center; height: 100%; }
+.cta-section { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 80px 0; /* Memberikan jarak vertikal antar section */
+  width: 100%; 
+}
 
 .cta-card {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
   border: 1px solid rgba(251, 191, 36, 0.2);
-  border-radius: 16px;
-  padding: 40px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-radius: 16px; /* Sudut lebih melengkung modern */
+  padding: 60px 40px;
   text-align: center;
   width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.cta-title { font-size: 2rem; margin-bottom: 16px; }
-.cta-description { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; }
+.cta-title { 
+  font-size: 2.4rem; 
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 20px; 
+}
 
+.cta-description { 
+  font-size: 1rem; 
+  color: var(--text-muted, #94a3b8); 
+  line-height: 1.6;
+  max-width: 680px; /* KUNCI: Membatasi lebar teks agar rapi di tengah */
+  margin: 0 auto 32px auto; 
+}
+
+/* KUNCI UTAMA: Membuat tombol ungu menyala khas asisten AI */
+.cta-card .cta-btn {
+  background: #7c3aed; /* Warna Ungu Violet */
+  color: #ffffff;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Efek pendaran lampu/glow di bawah tombol */
+  box-shadow: 0 4px 25px rgba(124, 58, 237, 0.5); 
+}
+
+.cta-card .cta-btn:hover {
+  background: #6d28d9;
+  box-shadow: 0 4px 35px rgba(124, 58, 237, 0.7);
+  transform: translateY(-2px); /* Efek sedikit terangkat saat di-hover */
+}
+
+.cta-card .cta-btn:active {
+  transform: translateY(0);
+} 
 /* ==========================================================================
    14. FOOTER
    ========================================================================== */
