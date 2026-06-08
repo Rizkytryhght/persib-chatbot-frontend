@@ -1,12 +1,8 @@
 import React from 'react';
 import Navbar from '../components/landing/Navbar';
 import HeroSection from '../components/landing/HeroSection';
-import KnowledgeSection from '../components/landing/KnowledgeSection';
-import FeaturesSection from '../components/landing/FeaturesSection';
 import TestimonialsSection from '../components/landing/TestimonialsSection';
-import ScalabilitySection from '../components/landing/ScalabilitySection';
 import UseCaseSection from '../components/landing/UseCaseSection';
-import TechnologySection from '../components/landing/TechnologySection';
 import FAQSection from '../components/landing/FAQSection';
 import CTASection from '../components/landing/CTASection';
 import Footer from '../components/landing/Footer';
@@ -21,16 +17,10 @@ const LandingPage = () => {
         <Navbar />
         <HeroSection />
         <div className="landing-grid" style={{backgroundImage: `linear-gradient(rgba(0,20,60,0.75),rgba(0,10,40,0.85)),url(${heroBg2})`}}>
-          <div className="grid-left"><KnowledgeSection /></div>
-          <div className="grid-right"><FeaturesSection /></div>
-          <div className="grid-full" id="features"><UseCaseSection /></div>
-          
-          <div className="grid-left"><ScalabilitySection /></div>          
-          <div className="grid-right" id="technology"><TechnologySection /></div>
-          
-          <div className="grid-full"><TestimonialsSection /></div>
-          <div className="grid-left" id="faq"><FAQSection /></div>
-          <div className="grid-right"><CTASection /></div>
+          <div className="grid-full" id="features"><UseCaseSection /></div>     
+          <div className="grid-full"><CTASection /></div>
+          <div className="grid-full" id="review"><TestimonialsSection /></div>
+          <div className="grid-full" id="faq"><FAQSection /></div>
         </div>
       </div>
       <Footer />

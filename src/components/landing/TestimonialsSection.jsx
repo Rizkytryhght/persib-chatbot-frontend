@@ -17,8 +17,8 @@ const TestimonialsSection = () => {
   return (
     <section className="testimonials-section">
       <div className="section-header-testimoni">
-        <h2 className="section-title">Suara Bobotoh</h2>
-        <p className="section-description">Apa kata mereka yang sudah mencoba kemudahan Maung Bot?</p>
+        <h2 className="section-title">Apa Kata Pengguna?</h2>
+        <p className="section-description">Pendapat dan pengalaman pengguna setelah menggunakan Maung Bot.</p>
       </div>
 
       <div className="testimonials-carousel">

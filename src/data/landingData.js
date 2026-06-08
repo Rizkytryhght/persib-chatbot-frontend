@@ -8,17 +8,9 @@ export const landingData = {
   navLinks: [
     { label: "Home", href: "#home" },
     { label: "Features", href: "#features" },
-    { label: "Technology", href: "#technology" },
+    { label: "Review", href: "#review" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
-  ],
-  features: [
-    { icon: "🎫", title: "Ticket Assistance", desc: "How to buy and secure tickets" },
-    { icon: "📅", title: "Match Information", desc: "Match calendar and updates" },
-    { icon: "🤝", title: "Membership Support", desc: "Membership tiers and ID cards" },
-    { icon: "👕", title: "Merchandise Info", desc: "Limited editions jersey and hats" },
-    { icon: "⚡", title: "Instant Responses", desc: "Lightning fast replies 24/7" },
-    { icon: "🏟️", title: "Stadium Regulations", desc: "Stadium rules and forbidden items" },
   ],
   testimonials: [
     {
@@ -48,13 +40,6 @@ export const landingData = {
     { image: scheduleImg, title: "Match Schedule", desc: "Who is next" },
     { image: merchImg, title: "Merchandise", desc: "Limited editions" },
     { image: stadiumImg, title: "Stadium Rules", desc: "Forbidden items" },
-  ],
-  technologies: [
-    { icon: "⚛️", title: "React" },
-    { icon: "🧠", title: "LLM" },
-    { icon: "🔄", title: "RAG" },
-    { icon: "🗄️", title: "Knowledge Base" },
-    { icon: "🔌", title: "API Integration" },
   ],
   faqs: [
     { 

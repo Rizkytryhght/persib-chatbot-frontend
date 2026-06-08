@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2024 PT PERSIB Bandung Bermartabat. All rights reserved.</p>
+        <p>© 2026 PT PERSIB Bandung Bermartabat. All rights reserved.</p>
         <p>Designed with Passion for Bobotoh.</p>
       </div>
     </footer>
