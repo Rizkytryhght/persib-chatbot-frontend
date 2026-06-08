@@ -1,10 +1,17 @@
+/* ==========================================================================
+   DESKTOP DEFAULT STYLES (Base Layout)
+   ========================================================================== */
 .settings-page {
   max-width: 1000px;
+  width: 100%;
+  padding: 20px; /* Jarak aman default di dalam DashboardLayout */
+  box-sizing: border-box;
 }
 
 .settings-title {
   font-size: 32px;
   font-weight: 700;
+  color: #ffffff;
   margin: 0 0 24px 0;
 }
 
@@ -14,33 +21,23 @@
   gap: 24px;
 }
 
-.settings-card {
-  background: var(--card-bg);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  border: 1px solid var(--border-color);
-}
-
-.settings-card h2 {
-  margin-bottom: 16px;
-}
-
 .settings-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  gap: 24px;
 }
 
 .settings-label {
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
 }
 
+/* Base style untuk CustomSelect / dropdown wrapper */
+.settings-row > div:last-child,
 .settings-select {
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
-  border: none;
-  min-width: 220px;
+  min-width: 240px;
 }
 
 .settings-row:last-child {
@@ -51,4 +48,102 @@
   margin-top: 32px;
   display: flex;
   justify-content: flex-start;
+}
+
+.settings-actions .profile-update-btn {
+  min-width: 160px;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+
+/* ==========================================================================
+   EXTREME RESPONSIVE MATRIX FOR SETTINGS PAGE
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & TABLET HORIZONTAL (Max 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .settings-page {
+    padding: 16px;
+  }
+  
+  .settings-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  /* Sedikit merapatkan ruang antar baris */
+  .settings-row {
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET VERTICAL & MOBILE (Max 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Mengubah susunan baris dari Kanan-Kiri menjadi Atas-Bawah (Vertikal) */
+  .settings-row {
+    flex-direction: column;
+    align-items: flex-start; /* Teks label rata kiri */
+    gap: 10px; /* Jarak antara label teks dan input/dropdown di bawahnya */
+    margin-bottom: 24px;
+  }
+
+  /* Khusus baris Notifikasi (Toggle Switch), kita biarkan tetap horizontal 
+     agar tampilannya tetap estetik dan hemat ruang */
+  .settings-row:has(.toggle-switch),
+  .settings-grid > div:first-child .settings-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* KUNCI: Memaksa elemen dropdown/CustomSelect melebar penuh mengikuti lebar Card */
+  .settings-row > div:last-child,
+  .settings-select {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  
+  /* Mengatur tombol aksi agar rata kanan-kiri (Full Width) di mobile */
+  .settings-actions {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .settings-actions .profile-update-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL MOBILE (Max 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .settings-title {
+    font-size: 24px; /* Ukuran judul lebih proporsional untuk layar hp kecil */
+    margin-bottom: 16px;
+  }
+
+  .settings-grid {
+    gap: 16px; /* Jarak antar card pengaturan lebih rapat */
+  }
+
+  /* Trik override padding .app-card tanpa merusak file card.css global */
+  .settings-grid .app-card {
+    padding: 16px 16px; /* Mengecilkan padding dalam card agar area konten lebih luas */
+  }
+  
+  .settings-row > span,
+  .settings-label {
+    font-size: 0.9rem; /* Ukuran teks sedikit mengecil agar tidak memakan ruang */
+  }
 }
