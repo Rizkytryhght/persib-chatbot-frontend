@@ -35,6 +35,11 @@ const HeroSection = () => {
               <div className="message bot-message">
                 <p>Persib Bandung akan menghadapi Bali United pada hari Sabtu, 15 Juni pukul 16:00 WIB di Stadion Gelora Bandung Lautan Api.</p>
               </div>
+              <div className="message bot-typing">
+                <div className="typing-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
             </div>
             <div className="chat-input-area">
               <input type="text" placeholder="Tanya Legenda..." readOnly />

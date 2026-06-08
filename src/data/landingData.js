@@ -20,36 +20,26 @@ export const landingData = {
     { icon: "⚡", title: "Instant Responses", desc: "Lightning fast replies 24/7" },
     { icon: "🏟️", title: "Stadium Regulations", desc: "Stadium rules and forbidden items" },
   ],
-  howItWorks: [
+  testimonials: [
     {
-      step: "01",
-      icon: "💬",
-      title: "Ask a Question",
-      desc: "Ask about tickets, match schedules, memberships, merchandise, or stadium regulations."
+      name: "Rian Hidayat",
+      username: "@rian_bobotoh",
+      text: "Gak perlu lagi nunggu admin medsos bales DM buat tau jadwal tanding. Tanya Maung Bot, detik itu juga dapet jawabannya. Mantap!"
     },
     {
-      step: "02",
-      icon: "🔍",
-      title: "Search Knowledge",
-      desc: "The system retrieves relevant information from official Persib knowledge sources."
+      name: "Siti Aminah",
+      username: "@sitia_persib",
+      text: "Pertama kali beli tiket online agak bingung, tapi dibimbing langkah demi langkah sama bot-nya. Sangat membantu buat fans awam kaya saya."
     },
     {
-      step: "03",
-      icon: "📚",
-      title: "Build Context",
-      desc: "Relevant documents and user questions are combined into a structured context."
+      name: "Budi Santoso",
+      username: "@budi_viking",
+      text: "Akurasi infonya juara. Soal regulasi stadion yang sering berubah pun Maung Bot selalu update. Wajib pakai sih kalau mau nonton ke GBLA."
     },
     {
-      step: "04",
-      icon: "🧠",
-      title: "Generate Response",
-      desc: "The AI generates a clear and accurate answer based on retrieved information."
-    },
-    {
-      step: "05",
-      icon: "✅",
-      title: "Deliver Answer",
-      desc: "Fans receive instant responses backed by trusted club information."
+      name: "Kang Mus",
+      username: "@muslihat_bdg",
+      text: "Asli ini ngebantu banget buat cek klasemen sama statistik pemain tanpa harus buka-buka web lain. Edun pisan Maung Bot!"
     }
   ],
   useCases: [

@@ -314,6 +314,10 @@ ul { list-style: none; padding: 0; margin: 0; }
   color: #D1D5DB;
 }
 
+.bot-message{
+  text-align: left;
+}
+
 .typing-dots span {
   display: inline-block;
   width: 6px; height: 6px;
@@ -424,51 +428,203 @@ ul { list-style: none; padding: 0; margin: 0; }
   align-items: center;
   justify-content: center;
 }
-
 /* ==========================================================================
-   9. PROCESS FLOW (HOW IT WORKS)
+   9. Testimonials (Refined Carousel)
    ========================================================================== */
-.process-flow {
+.testimonials-section {
+  padding: 50px 5%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+    position: relative; /* tambah ini */
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #FFFFFF 25%,
+    #FFFFFF 75%,
+    transparent 100%
+  );
+  opacity: 0.20;
+}
+
+.testimonials-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 360px; /* 1. Diperkecil (sebelumnya 420px) agar proporsional dengan card baru */
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+}
+
+/* Base Card Styling */
+.testimonial-card {
+  position: absolute;
+  width: 90%;
+  max-width: 380px;  /* 1. Diperkecil (sebelumnya 420px) */
+  height: 290px;     /* 1. Diperkecil (sebelumnya 320px) */
+  
+  /* 4. Dibuat sedikit transparan dengan efek glassmorphism */
+  background: rgba(17, 24, 39, 0.55); /* Opasitas diturunkan dari 0.85 ke 0.55 */
+  backdrop-filter: blur(12px); /* Menjaga teks tetap terbaca meski background transparan */
+  
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px 28px 20px 28px; /* Padding disesuaikan dengan ukuran baru */
+  display: flex;
+  flex-direction: column;
+  
+  transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity, filter;
+  transform-origin: bottom center; 
+}
+
+/* POSISI 1: CARD TENGAH */
+.card-active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  filter: blur(0) brightness(1);
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
+  border-color: rgba(255, 255, 255, 0.15); 
+}
+
+/* POSISI 2: CARD KIRI */
+.card-prev {
+  transform: translateX(-70%) scale(0.8); /* Scale disesuaikan */
+  opacity: 0.45; /* Sedikit lebih terang agar tidak terlalu mati */
+  /* 3. Blur dikurangi drastis agar tidak terlihat seperti noda */
+  filter: blur(1.5px) brightness(0.7); 
+  z-index: 5;
+  pointer-events: none; 
+}
+
+/* POSISI 3: CARD KANAN */
+.card-next {
+  transform: translateX(70%) scale(0.8); 
+  opacity: 0.45;
+  /* 3. Blur dikurangi drastis */
+  filter: blur(1.5px) brightness(0.7); 
+  z-index: 5;
+  pointer-events: none;
+}
+
+.card-hidden {
+  transform: translateX(0) scale(0.5);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none; 
+}
+
+/* TEKS KONTEN */
+.quote-mark {
+  font-size: 2.5rem; /* Disesuaikan dengan card yang lebih kecil */
+  color: rgba(255, 255, 255, 0.15);
+  margin-top: -10px;
+  margin-bottom: 5px;
+  text-align: left;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-size: 0.95rem; /* Disesuaikan */
+  line-height: 1.6;
+  color: #c9d1d9;
+  text-align: left;
+  margin-bottom: auto;
+  
+  /* 2. Style font deskripsi dibuat italic */
+  font-style: italic; 
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonial-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.testimonial-footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  position: relative;
-  margin-bottom: 24px;
+  align-items: center;
 }
 
-.process-step {
-  width: 180px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+.user-meta { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
 }
 
-.step-number {
-  width: 42px;
-  height: 42px;
-  margin: 0 auto 16px;
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--primary-blue, #1A73E8); 
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
 }
 
-.step-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.step-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-.step-desc { color: rgba(255, 255, 255, 0.75); line-height: 1.6; font-size: 0.85rem; }
-
-.process-line {
-  flex: 1;
-  height: 2px;
-  margin-top: 21px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.5), rgba(255,255,255,0.05));
+.user-info h4 { 
+  margin: 0; 
+  font-size: 0.9rem; 
+  color: white; 
+  text-align: left; 
+}
+.user-info span { 
+  font-size: 0.2rem; 
+  color: #8b949e; 
+  display: block; 
+  text-align: left; 
 }
 
+.rating { color: #f1c40f; font-size: 0.75rem; letter-spacing: 2px;}
+
+/* Dots Pagination */
+.carousel-dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 0;
+}
+
+.dot.active {
+  background: var(--primary-blue, #1A73E8);
+  width: 32px; 
+  border-radius: 10px;
+}
 /* ==========================================================================
    10. SCALABILITY & DASHBOARD MOCKUP
    ========================================================================== */
@@ -903,6 +1059,10 @@ ul { list-style: none; padding: 0; margin: 0; }
     flex-direction: column; /* Tombol jadi bertumpuk */
     justify-content: center;
   }
+  .testimonials-carousel { height: 320px; }
+  .testimonial-card { height: 260px; padding: 20px; max-width: 85%; }
+  .card-prev { transform: translateX(-35%) scale(0.85); opacity: 0.3; }
+  .card-next { transform: translateX(35%) scale(0.85); opacity: 0.3; }
 }
 
 /* SMALL MOBILE (Max 480px) */
