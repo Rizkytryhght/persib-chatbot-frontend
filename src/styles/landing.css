@@ -1098,14 +1098,55 @@ ul { list-style: none; padding: 0; margin: 0; }
     padding: 30px 20px;
   }
 
+/* 1. KNOWLEDGE SECTION: Ubah jadi grid 2x2 agar ringkas */
   .knowledge-flow {
-    flex-direction: column; 
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom */
+    gap: 20px;
+    margin: 20px auto;
+  }
+
+  /* Sembunyikan panah karena sudah jadi grid 2x2 */
+  .flow-arrow {
+    display: none;
+  }
+
+  /* Kecilkan ukuran node agar tidak terlalu makan ruang */
+  .flow-node {
+    max-width: 100%;
+    margin: 0;
   }
   
-  .flow-arrow {
-    transform: rotate(90deg);
-    margin: 8px 0;
+  .flow-node .icon {
+    font-size: 1.8rem; /* Sedikit lebih kecil dari desktop */
+    margin-bottom: 8px;
+  }
+
+  .flow-node span {
+    font-size: 0.85rem;
+  }
+
+  /* 2. FEATURES SECTION: Ubah jadi 2 kolom */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 12px; /* Jarak antar kartu lebih rapat */
+  }
+
+  .feature-card {
+    padding: 16px 12px; /* Padding lebih kecil agar tidak terlalu lebar */
+  }
+
+  .feature-icon {
+    font-size: 1.5rem; /* Icon sedikit mengecil */
+    margin-bottom: 8px;
+  }
+
+  .feature-title {
+    font-size: 0.85rem; /* Font judul sedikit mengecil */
+  }
+
+  .feature-desc {
+    font-size: 0.75rem; /* Font deskripsi menyesuaikan */
   }
 
   .tech-flex {
