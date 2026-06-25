@@ -25,7 +25,7 @@ const HeroSection = () => {
               <span className="bot-avatar">🤖</span>
               <div className="bot-info">
                 <h4>MAUNG BOT</h4>
-                <p><span className="status-dot"></span> Online • Master Juara Mode</p>
+                <p><span className="status-dot"></span> Online</p>
               </div>
             </div>
             <div className="chat-body">
